@@ -19,19 +19,30 @@ function buildModalBody(agentKey, highlightParam) {
   let html = '';
 
   // Score gauge
-  const indivTarget = 85; const teamTarget = 95; const gap = indivTarget - a.cq;
+  const indivTarget = 85;
+  const teamTarget = 95;
+  const gap = indivTarget - a.cq;
   const gc = a.cq >= 95 ? 'bar-green' : a.cq >= 90 ? 'bar-gold' : a.cq >= 85 ? 'bar-green' : 'bar-orange';
-  const gapText = gap > 0 ? `${gap}% below individual target (85%)` : `✓ Individual target met · ${teamTarget - a.cq > 0 ? (teamTarget - a.cq) + '% to team target (95%)' : 'Team target met too!'}`;
-  const pctColor = a.cq >= 90 ? '#b8860b' : a.cq >= 80 ? '#16a34a' : '#ea580c';
+  const gapText = gap > 0
+    ? `${gap}% below individual target (85%)`
+    : `✓ Individual target met · ${teamTarget - a.cq > 0 ? (teamTarget - a.cq) + '% to team target (95%)' : 'Team target met!'}`;
+  const pctColor = a.cq >= 90 ? '#b8860b' : a.cq >= 85 ? '#16a34a' : '#ea580c';
+
   html += `
     <div class="modal-sec-lbl">CQ Score</div>
     <div class="gauge-wrap">
       <div style="flex:1;">
         <div class="gauge-track">
-          <div class="bar-fill ${gc}" style="width:${a.cq}%;height:100%;border-radius:6px;"></div>
-          <div class="gauge-target" style="left:85%;background:#f59e0b;" title="Individual Target 85%"></div><div style="position:absolute;top:-2px;bottom:-2px;left:95%;width:2px;background:#dc2626;border-radius:2px;" title="Team Target 95%"></div>
+          <div class="bar-fill ${gc}" style="width:${a.cq}%;height:100%;border-radius:6px;transition:width 1.2s cubic-bezier(.4,0,.2,1);"></div>
+          <div class="gauge-target" style="left:85%;background:#f59e0b;" title="Individual Target 85%"></div>
+          <div style="position:absolute;top:-2px;bottom:-2px;left:95%;width:2px;background:#dc2626;border-radius:2px;" title="Team Target 95%"></div>
         </div>
-        <div class="gauge-labels"><span>0%</span><span style="font-weight:700;color:#1c2a3a;">Target: 95%</span><span>100%</span></div>
+        <div class="gauge-labels">
+          <span>0%</span>
+          <span style="color:#f59e0b;font-weight:700;">Indiv. 85%</span>
+          <span style="color:#dc2626;font-weight:700;">Team 95%</span>
+          <span>100%</span>
+        </div>
       </div>
       <div style="text-align:right;flex-shrink:0;min-width:70px;">
         <div style="font-family:Georgia,serif;font-size:30px;font-weight:800;color:${pctColor};line-height:1;">${a.cq}%</div>
