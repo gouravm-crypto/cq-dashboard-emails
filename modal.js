@@ -1,0 +1,119 @@
+function getScoreBadgeClass(s) {
+  if (s >= 90) return 'csb-high';
+  if (s >= 75) return 'csb-mid';
+  return 'csb-low';
+}
+
+function buildMetricsHTML(a) {
+  const sc = a.cq >= 90 ? 'gold' : a.cq >= 80 ? 'green' : 'orange';
+  return `
+    <div class="mm"><div class="mm-val ${sc}">${a.cq}%</div><div class="mm-lbl">CQ Score</div></div>
+    <div class="mm"><div class="mm-val white">${a.audits}</div><div class="mm-lbl">Audits</div></div>
+    <div class="mm"><div class="mm-val green">${a.ncf}</div><div class="mm-lbl">NCF</div></div>
+    <div class="mm"><div class="mm-val orange">${a.totalErrors}</div><div class="mm-lbl">Total Errors</div></div>
+    <div class="mm"><div class="mm-val red">${95 - a.cq}%</div><div class="mm-lbl">Gap to Target</div></div>`;
+}
+
+function buildModalBody(agentKey, highlightParam) {
+  const a = AGENTS[agentKey];
+  let html = '';
+
+  // Score gauge
+  const gap = 95 - a.cq;
+  const gc = a.cq >= 95 ? 'bar-green' : a.cq >= 90 ? 'bar-gold' : a.cq >= 80 ? 'bar-green' : 'bar-orange';
+  const gapText = gap > 0 ? `${gap}% below 95% target` : 'At or above target';
+  const pctColor = a.cq >= 90 ? '#b8860b' : a.cq >= 80 ? '#16a34a' : '#ea580c';
+  html += `
+    <div class="modal-sec-lbl">CQ Score</div>
+    <div class="gauge-wrap">
+      <div style="flex:1;">
+        <div class="gauge-track">
+          <div class="bar-fill ${gc}" style="width:${a.cq}%;height:100%;border-radius:6px;"></div>
+          <div class="gauge-target"></div>
+        </div>
+        <div class="gauge-labels"><span>0%</span><span style="font-weight:700;color:#1c2a3a;">Target: 95%</span><span>100%</span></div>
+      </div>
+      <div style="text-align:right;flex-shrink:0;min-width:70px;">
+        <div style="font-family:Georgia,serif;font-size:30px;font-weight:800;color:${pctColor};line-height:1;">${a.cq}%</div>
+        <div style="font-size:10px;color:#8a7a60;margin-top:2px;">${gapText}</div>
+      </div>
+    </div>`;
+
+  // Param breakdown
+  html += `<div class="modal-sec-lbl">Errors by Parameter</div><div class="param-mini-grid">`;
+  Object.entries(a.params).forEach(([k, v]) => {
+    const hl = k === highlightParam;
+    const color = PARAM_COLORS[k];
+    html += `<div class="pmg-item${hl ? ' pmg-hl' : ''}">
+      <div class="pmg-val" style="color:${v === 0 ? '#16a34a' : color};">${v === 0 ? '✓' : v}</div>
+      <div class="pmg-lbl">${PARAM_LABELS[k]}</div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  // AOIs
+  html += `<div class="modal-sec-lbl">Areas of Improvement</div><div class="aoi-list">`;
+  a.aois.forEach(aoi => {
+    const c = PARAM_COLORS[aoi.cat];
+    html += `<div class="aoi-item" style="border-left-color:${c};">
+      <div class="aoi-cat" style="color:${c};">${aoi.label}</div>
+      <div class="aoi-text">${aoi.text}</div>
+    </div>`;
+  });
+  html += `</div>`;
+
+  // Cases
+  html += `<div class="modal-sec-lbl">Audit Cases — ${a.audits} total</div>`;
+  a.cases.forEach((c, i) => {
+    const hl = highlightParam && a.paramCaseMap[highlightParam] && a.paramCaseMap[highlightParam].includes(i);
+    const sbClass = getScoreBadgeClass(c.score);
+    html += `<div class="case-card${hl ? ' case-hl' : ''}" id="case-${agentKey}-${i}">
+      <div class="case-hd">
+        <div class="case-query">${c.query}${hl ? ' <span class="case-flag">▶ Flagged</span>' : ''}</div>
+        <span class="case-badge ${sbClass}">${c.score}%</span>
+      </div>
+      <div class="case-text">${c.comment}</div>
+    </div>`;
+  });
+
+  // What to do better
+  html += `<div class="modal-sec-lbl">What To Do Better</div>
+    <div class="better-box">`;
+  a.aois.forEach(aoi => {
+    html += `<div class="better-item"><span class="better-arrow">▸</span>${aoi.text}</div>`;
+  });
+  html += `</div>`;
+
+  return html;
+}
+
+function openModal(agentKey, highlightParam) {
+  const a = AGENTS[agentKey];
+  if (!a) return;
+  document.getElementById('m-name').textContent = a.name;
+  document.getElementById('m-role').textContent = 'Emails Team · March 2026';
+  document.getElementById('m-metrics').innerHTML = buildMetricsHTML(a);
+  document.getElementById('m-body').innerHTML = buildModalBody(agentKey, highlightParam || null);
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+  if (highlightParam) {
+    setTimeout(() => {
+      const first = document.querySelector('.case-hl');
+      if (first) first.scrollIntoView({behavior:'smooth', block:'center'});
+    }, 300);
+  } else {
+    document.getElementById('m-body').scrollTop = 0;
+  }
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+});
