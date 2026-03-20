@@ -43,8 +43,8 @@ body{font-family:'Segoe UI','Helvetica Neue',Arial,sans-serif;background:var(--b
 .hero-inner{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:0 40px;}
 .hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:inline-flex;align-items:center;gap:10px;}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:20px;height:1.5px;background:var(--gold);}
-.hero-title{font-family:Georgia,serif;font-size:clamp(40px,6vw,70px);font-weight:800;color:#fff;line-height:.95;letter-spacing:-1px;margin-bottom:6px;}
-.hero-title .em{color:var(--gold);font-style:italic;}
+.hero-title{font-family:Georgia,serif;font-size:clamp(40px,6vw,70px);font-weight:800;color:#a855f7;line-height:.95;letter-spacing:-1px;margin-bottom:6px;}
+.hero-title .em{color:#a855f7;font-style:italic;}
 .hero-date{font-family:Georgia,serif;font-size:clamp(18px,2.5vw,28px);color:rgba(255,255,255,.5);margin-bottom:8px;}
 .hero-sub{font-size:12px;color:rgba(255,255,255,.35);letter-spacing:.5px;margin-bottom:36px;}
 .hero-stats{display:inline-flex;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;}
@@ -111,8 +111,8 @@ section+section{border-top:1px solid var(--bdr);}
 
 /* ── INSIGHT CARDS ── */
 .insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;}
-.insight-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.ic{background:#fff;border:1.5px solid var(--bdr);border-top:3px solid var(--ic-accent,var(--bdr));border-radius:14px;padding:20px;box-shadow:var(--sh-sm);text-align:left;transition:transform .2s,box-shadow .2s;}
+.insight-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;} .insight-grid-2 .ic{text-align:left;}
+.ic{background:#fff;border:1.5px solid var(--bdr);border-top:3px solid var(--ic-accent,var(--bdr));border-radius:14px;padding:20px;box-shadow:var(--sh-sm);text-align:center;transition:transform .2s,box-shadow .2s;}
 .ic:hover{transform:translateY(-3px);box-shadow:var(--sh-md);}
 .ic.gold{--ic-accent:var(--gold);}
 .ic.green{--ic-accent:var(--green);}
@@ -265,7 +265,7 @@ section+section{border-top:1px solid var(--bdr);}
         <div class="tb-icon">🎯</div>
         <div>
           <div class="tb-lbl">Team Target</div>
-          <div class="tb-txt">Target CQ is <strong style="color:var(--gold)">95%</strong>. Agents in the 90%+ range are appreciated. Everyone below 95% has room to grow.</div>
+          <div class="tb-txt">Individual target: <strong style="color:var(--gold-lt)">85%</strong> Target CQ is <strong style="color:var(--gold)">95%</strong>. Agents in the 90%+ range are appreciated. Everyone below 95% has room to grow.amp;nbsp;·Target CQ is <strong style="color:var(--gold)">95%</strong>. Agents in the 90%+ range are appreciated. Everyone below 95% has room to grow.amp;nbsp; Team target: <strong style="color:var(--gold)">95%</strong>. 90%+ range is always appreciated. Everyone below their target has room to grow.</div>
         </div>
       </div>
       <div class="tb-right">
@@ -332,15 +332,15 @@ section+section{border-top:1px solid var(--bdr);}
     <div class="sec-ttl">Key Observations</div>
     <div class="sec-sub">At-a-glance team health, top performers, biggest gaps, and risk flags.</div>
     <div class="insight-grid">
-      <div class="ic gold" style="text-align:left;"><div class="ic-label">⭐ Top Performer</div><div class="ic-val gold">90%</div><div class="ic-sub"><strong>Ansari_S</strong> leads the team. Closest to 95% target — 5% gap remaining.</div></div>
-      <div class="ic green" style="text-align:left;"><div class="ic-label">✅ Zero NCF</div><div class="ic-val green">0</div><div class="ic-sub">All 5 agents maintained zero Non-Conformance Findings this month.</div></div>
-      <div class="ic red" style="text-align:left;"><div class="ic-label">⚠ Needs Attention</div><div class="ic-val red">76%</div><div class="ic-sub"><strong>Surbhi_A</strong> — lowest CQ, 19% below target. Focused coaching required.</div></div>
-      <div class="ic orange" style="text-align:left;"><div class="ic-label">🔴 Most Error-Prone Parameter</div><div class="ic-val orange">16</div><div class="ic-sub"><strong>Solution & Recommendation</strong> — incomplete info & ownership gaps driving it.</div></div>
-      <div class="ic blue" style="text-align:left;"><div class="ic-label">📊 Avg Gap to Target</div><div class="ic-val blue">–9%</div><div class="ic-sub">Team average is 86% vs 95% target. Consistent improvement needed.</div></div>
-      <div class="ic purple" style="text-align:left;"><div class="ic-label">🏷 Etiquette Win</div><div class="ic-val purple">0</div><div class="ic-sub"><strong>Call/Chat Etiquette</strong> — zero errors this month. Professional standards maintained.</div></div>
+      <div class="ic gold"><div class="ic-label">⭐ Top Performer</div><div class="ic-val gold">90%</div><div class="ic-sub"><strong>Ansari_S</strong> leads the team. Closest to 95% target — 5% gap remaining.</div></div>
+      <div class="ic green"><div class="ic-label">✅ Zero NCF</div><div class="ic-val green">0</div><div class="ic-sub">All 5 agents maintained zero Non-Conformance Findings this month.</div></div>
+      <div class="ic red"><div class="ic-label">⚠ Needs Attention</div><div class="ic-val red">76%</div><div class="ic-sub"><strong>Surbhi_A</strong> — lowest CQ, 19% below target. Focused coaching required.</div></div>
+      <div class="ic orange"><div class="ic-label">🔴 Most Error-Prone Parameter</div><div class="ic-val orange">16</div><div class="ic-sub"><strong>Solution & Recommendation</strong> — incomplete info & ownership gaps driving it.</div></div>
+      <div class="ic blue"><div class="ic-label">📊 Avg Gap to Target</div><div class="ic-val blue">–9%</div><div class="ic-sub">Team average is 86% vs 95% target. Consistent improvement needed.</div></div>
+      <div class="ic purple"><div class="ic-label">🏷 Etiquette Win</div><div class="ic-val purple">0</div><div class="ic-sub"><strong>Call/Chat Etiquette</strong> — zero errors this month. Professional standards maintained.</div></div>
     </div>
     <div class="insight-grid-2" style="margin-top:14px;">
-      <div class="ic gold" style="text-align:left;">
+      <div class="ic gold">
         <div class="ic-label">📌 Agents Ranked by Total Errors</div>
         <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;">
           <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="font-weight:600;">Surbhi_A</span><span style="font-weight:700;color:var(--red);">18 errors</span></div>
@@ -350,7 +350,7 @@ section+section{border-top:1px solid var(--bdr);}
           <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="font-weight:600;">Ansari_S</span><span style="font-weight:700;color:var(--blue);">7 errors</span></div>
         </div>
       </div>
-      <div class="ic blue" style="text-align:left;">
+      <div class="ic blue">
         <div class="ic-label">🎯 Biggest Gap Per Agent</div>
         <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;">
           <div style="font-size:13px;color:var(--txt2);"><strong>Ansari_S</strong> — Soft Skills (empathy, ownership phrases)</div>
