@@ -67,14 +67,14 @@ section+section{border-top:1px solid var(--bdr);}
 .sec-sub{font-size:13px;color:var(--txt3);margin-bottom:28px;line-height:1.65;max-width:600px;margin-left:auto;margin-right:auto;}
 
 /* ── TARGET BANNER ── */
-.target-banner{background:linear-gradient(135deg,var(--navy2) 0%,#1a3050 100%);border:1.5px solid var(--gold);border-radius:14px;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:24px;flex-wrap:wrap;text-align:left;}
-.tb-left{display:flex;align-items:center;gap:14px;}
-.tb-icon{font-size:26px;flex-shrink:0;}
-.tb-lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:2px;}
-.tb-txt{font-size:13px;color:rgba(255,255,255,.7);line-height:1.5;}
-.tb-right{display:flex;gap:24px;}
+.target-banner{background:linear-gradient(135deg,var(--navy2) 0%,#1a3050 100%);border:1.5px solid var(--gold);border-radius:14px;padding:22px 28px;margin-bottom:24px;text-align:center;}
+.tb-left{display:block;}
+.tb-icon{font-size:28px;margin-bottom:8px;}
+.tb-lbl{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.tb-txt{font-size:13px;color:rgba(255,255,255,.7);line-height:1.6;max-width:500px;margin:0 auto 18px;}
+.tb-right{display:flex;gap:36px;justify-content:center;}
 .tb-stat{text-align:center;}
-.tb-num{font-family:Georgia,serif;font-size:24px;font-weight:800;line-height:1;}
+.tb-num{font-family:Georgia,serif;font-size:26px;font-weight:800;line-height:1;}
 .tb-num.gold{color:var(--gold);}
 .tb-num.green{color:var(--green-lt);}
 .tb-num.red{color:#f87171;}
@@ -84,14 +84,12 @@ section+section{border-top:1px solid var(--bdr);}
 .score-table{width:100%;border-collapse:collapse;border-radius:14px;overflow:hidden;box-shadow:var(--sh-md);text-align:left;}
 .score-table thead tr{background:var(--navy);}
 .score-table thead th{color:rgba(255,255,255,.6);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:12px 16px;text-align:center;}
-.score-table thead th:first-child{text-align:left;}
 .score-table tbody tr{background:#fff;border-bottom:1px solid var(--bdr);cursor:pointer;transition:background .15s;}
 .score-table tbody tr:hover{background:#faf8f4;}
 .score-table tbody tr.total-row{background:#f7f5f0;cursor:default;}
 .score-table tbody tr.total-row:hover{background:#f7f5f0;}
 .score-table tbody td{padding:13px 16px;font-size:14px;text-align:center;vertical-align:middle;}
-.score-table tbody td:first-child{text-align:left;}
-.agent-cell{display:flex;align-items:center;gap:12px;}
+.agent-cell{display:flex;align-items:center;justify-content:center;gap:12px;}
 .agent-av{width:36px;height:36px;border-radius:50%;color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .agent-nm{font-weight:600;color:var(--navy);font-size:14px;}
 .agent-hint{font-size:10px;color:#b8a888;margin-top:1px;}
@@ -111,7 +109,7 @@ section+section{border-top:1px solid var(--bdr);}
 
 /* ── INSIGHT CARDS ── */
 .insight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px;}
-.insight-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;} .insight-grid-2 .ic{text-align:left;}
+.insight-grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;} .insight-grid-2 .ic{text-align:center;}
 .ic{background:#fff;border:1.5px solid var(--bdr);border-top:3px solid var(--ic-accent,var(--bdr));border-radius:14px;padding:20px;box-shadow:var(--sh-sm);text-align:center;transition:transform .2s,box-shadow .2s;}
 .ic:hover{transform:translateY(-3px);box-shadow:var(--sh-md);}
 .ic.gold{--ic-accent:var(--gold);}
@@ -135,10 +133,10 @@ section+section{border-top:1px solid var(--bdr);}
 .param-arrow{color:rgba(255,255,255,.5);font-size:12px;transition:transform .25s;display:inline-block;}
 .param-body{background:#fff;border:1px solid var(--bdr);border-top:none;display:none;}
 .param-body.open{display:block;}
-.param-agent-row{display:grid;grid-template-columns:1fr 60px 120px;align-items:center;gap:12px;padding:11px 18px;border-bottom:1px solid #f5f3ef;cursor:pointer;transition:background .15s;}
+.param-agent-row{display:grid;grid-template-columns:1fr 60px 120px;align-items:center;gap:12px;padding:11px 18px;border-bottom:1px solid #f5f3ef;cursor:pointer;transition:background .15s;text-align:center;}
 .param-agent-row:last-child{border-bottom:none;}
 .param-agent-row:hover{background:#fafaf7;}
-.par-name{font-size:14px;font-weight:500;color:var(--navy);text-align:left;}
+.par-name{font-size:14px;font-weight:500;color:var(--navy);text-align:center;}
 .par-count{font-family:Georgia,serif;font-size:22px;font-weight:700;text-align:center;}
 .par-count.c5,.par-count.c4{color:var(--red);}
 .par-count.c3{color:var(--orange);}
@@ -263,10 +261,8 @@ section+section{border-top:1px solid var(--bdr);}
     <div class="target-banner">
       <div class="tb-left">
         <div class="tb-icon">🎯</div>
-        <div>
-          <div class="tb-lbl">Team Target</div>
-          <div class="tb-txt">Individual target: <strong style="color:var(--gold-lt)">85%</strong> &nbsp;·&nbsp; Team target: <strong style="color:var(--gold)">95%</strong>. Agents in the 90%+ range are always appreciated. Everyone below their individual target has room to grow.</div>
-        </div>
+        <div class="tb-lbl">Team Target</div>
+        <div class="tb-txt">Individual target: <strong style="color:var(--gold-lt)">85%</strong> &nbsp;·&nbsp; Team target: <strong style="color:var(--gold)">95%</strong>. Agents in the 90%+ range are always appreciated. Everyone below their individual target has room to grow.</div>
       </div>
       <div class="tb-right">
         <div class="tb-stat"><div class="tb-num red">0</div><div class="tb-slbl">At Target</div></div>
@@ -343,16 +339,16 @@ section+section{border-top:1px solid var(--bdr);}
       <div class="ic gold">
         <div class="ic-label">📌 Agents Ranked by Total Errors</div>
         <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;">
-          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="font-weight:600;">Surbhi_A</span><span style="font-weight:700;color:var(--red);">18 errors</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="font-weight:600;">Preethi_V</span><span style="font-weight:700;color:var(--orange);">10 errors</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="font-weight:600;">Jinal_K</span><span style="font-weight:700;color:var(--orange);">9 errors</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="font-weight:600;">Ghouse_M</span><span style="font-weight:700;color:var(--blue);">8 errors</span></div>
-          <div style="display:flex;justify-content:space-between;font-size:13px;"><span style="font-weight:600;">Ansari_S</span><span style="font-weight:700;color:var(--blue);">7 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;">Surbhi_A</span><span style="font-weight:700;color:var(--red);">18 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;">Preethi_V</span><span style="font-weight:700;color:var(--orange);">10 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;">Jinal_K</span><span style="font-weight:700;color:var(--orange);">9 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;">Ghouse_M</span><span style="font-weight:700;color:var(--blue);">8 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;">Ansari_S</span><span style="font-weight:700;color:var(--blue);">7 errors</span></div>
         </div>
       </div>
       <div class="ic blue">
         <div class="ic-label">🎯 Biggest Gap Per Agent</div>
-        <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;">
+        <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;text-align:center;">
           <div style="font-size:13px;color:var(--txt2);"><strong>Ansari_S</strong> — Soft Skills (empathy, ownership phrases)</div>
           <div style="font-size:13px;color:var(--txt2);"><strong>Jinal_K</strong> — Solution (incomplete first replies)</div>
           <div style="font-size:13px;color:var(--txt2);"><strong>Ghouse_M</strong> — Probing (resolution-linked)</div>
