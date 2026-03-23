@@ -332,8 +332,8 @@ section+section{border-top:1px solid var(--section-bdr);}
       </div>
       <div class="tb-right">
         <div class="tb-stat"><div class="tb-num red">0</div><div class="tb-slbl">At Target</div></div>
-        <div class="tb-stat"><div class="tb-num gold">1</div><div class="tb-slbl">90%+ Range</div></div>
-        <div class="tb-stat"><div class="tb-num red">4</div><div class="tb-slbl">Below 90%</div></div>
+        <div class="tb-stat"><div class="tb-num gold">2</div><div class="tb-slbl">90%+ Range</div></div>
+        <div class="tb-stat"><div class="tb-num red">3</div><div class="tb-slbl">Below 90%</div></div>
       </div>
     </div>
 
@@ -350,17 +350,17 @@ section+section{border-top:1px solid var(--section-bdr);}
           <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bar-gold" data-width="90"></div></div><span class="pct c-gold">90%</span></div></td>
           <td><span class="ti ti-near">–5% to target</span></td>
         </tr>
+        <tr onclick="openModal('jinal')">
+          <td><div class="agent-cell"><div class="agent-av" style="background:#16a34a;">JK</div><div><div class="agent-nm">Jinal_K</div><div class="agent-hint">Click to view full report →</div></div></div></td>
+          <td>7</td><td><span class="ncf-badge">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bar-gold" data-width="90"></div></div><span class="pct c-gold">90%</span></div></td>
+          <td><span class="ti ti-near">–5% to target</span></td>
+        </tr>
         <tr onclick="openModal('ghouse')">
           <td><div class="agent-cell"><div class="agent-av" style="background:#2563eb;">GM</div><div><div class="agent-nm">Ghouse_M</div><div class="agent-hint">Click to view full report →</div></div></div></td>
           <td>7</td><td><span class="ncf-badge">0</span></td>
           <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bar-gold" data-width="89"></div></div><span class="pct c-gold">89%</span></div></td>
           <td><span class="ti ti-near">–6% to target</span></td>
-        </tr>
-        <tr onclick="openModal('jinal')">
-          <td><div class="agent-cell"><div class="agent-av" style="background:#16a34a;">JK</div><div><div class="agent-nm">Jinal_K</div><div class="agent-hint">Click to view full report →</div></div></div></td>
-          <td>7</td><td><span class="ncf-badge">0</span></td>
-          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bar-green" data-width="88"></div></div><span class="pct c-green">88%</span></div></td>
-          <td><span class="ti ti-below">–7% to target</span></td>
         </tr>
         <tr onclick="openModal('preethi')">
           <td><div class="agent-cell"><div class="agent-av" style="background:#7c3aed;">PV</div><div><div class="agent-nm">Preethi_V</div><div class="agent-hint">Click to view full report →</div></div></div></td>
@@ -390,7 +390,7 @@ section+section{border-top:1px solid var(--section-bdr);}
     <div class="sec-ttl">Key Observations</div>
     <div class="sec-sub">At-a-glance team health, top performers, biggest gaps, and risk flags.</div>
     <div class="insight-grid">
-      <div class="ic gold"><div class="ic-label">⭐ Top Performer</div><div class="ic-val gold">90%</div><div class="ic-sub"><strong>Ansari_S</strong> leads the team. Closest to 95% target — 5% gap remaining.</div></div>
+      <div class="ic gold"><div class="ic-label">⭐ Top Performers</div><div class="ic-val gold">90%</div><div class="ic-sub"><strong>Ansari_S &amp; Jinal_K</strong> lead the team — both at 90%, closest to the 95% target.</div></div>
       <div class="ic green"><div class="ic-label">✅ Zero NCF</div><div class="ic-val green">0</div><div class="ic-sub">All 5 agents maintained zero Non CaratLane Friendly cases this month.</div></div>
       <div class="ic red"><div class="ic-label">⚠ Needs Attention</div><div class="ic-val red">76%</div><div class="ic-sub"><strong>Surbhi_A</strong> — lowest CQ, 19% below target. Focused coaching required.</div></div>
       <div class="ic orange"><div class="ic-label">🔴 Most Error-Prone Parameter</div><div class="ic-val orange">16</div><div class="ic-sub"><strong>Solution & Recommendation</strong> — incomplete info & ownership gaps driving it.</div></div>
@@ -412,8 +412,8 @@ section+section{border-top:1px solid var(--section-bdr);}
         <div class="ic-label">🎯 Biggest Gap Per Agent</div>
         <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;text-align:center;">
           <div style="font-size:13px;color:var(--txt2);"><strong>Ansari_S</strong> — Soft Skills (empathy, ownership phrases)</div>
+          <div style="font-size:13px;color:var(--txt2);"><strong>Jinal_K</strong> — Solution &amp; Follow Up (first replies, follow through)</div>
           <div style="font-size:13px;color:var(--txt2);"><strong>Ghouse_M</strong> — Probing (resolution-linked) &amp; policy updates</div>
-          <div style="font-size:13px;color:var(--txt2);"><strong>Jinal_K</strong> — Solution (incomplete first replies)</div>
           <div style="font-size:13px;color:var(--txt2);"><strong>Preethi_V</strong> — Tagging (disposition errors)</div>
           <div style="font-size:13px;color:var(--txt2);"><strong>Surbhi_A</strong> — Solution &amp; Probing (multiple gaps)</div>
         </div>
