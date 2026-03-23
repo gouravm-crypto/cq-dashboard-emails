@@ -41,15 +41,15 @@ const AGENTS = {
   },
   ghouse: {
     name:"Ghouse_M", initials:"GM", color:"#2563eb",
-    cq:87, audits:7, ncf:0, totalErrors:8,
+    cq:89, audits:7, ncf:0, totalErrors:8,
     params:{ss:1, sol:3, prob:3, tag:1, fu:0},
     aois:[
       {cat:"prob", label:"Probing", text:"Probing should connect directly to the resolution path — missed asking the right clarifying questions before replying in 2 audits."},
       {cat:"ss", label:"Soft Skills", text:"Phrase quality — use language that conveys care and urgency rather than neutral statements."},
-      {cat:"sol", label:"Solution", text:"Policy awareness gap — not updated on the making charges change, leading to an incomplete response. Stay current on policy updates before replying."}
+      {cat:"sol", label:"Solution", text:"Policy awareness gap — making charges change was recent and training is yet to be scheduled. Partially attributed — JC to stay updated as and when policy communications are shared."}
     ],
     cases:[
-      {query:"Pricing Related", score:57, comment:"Customer questioned about making charges change. JC was not aware about new policy change. AOI — JC should be knowledgeable about this and frame replies better."},
+      {query:"Pricing Related", score:71, comment:"Customer questioned about making charges change. The policy change was recent and training is yet to be scheduled — error is partially attributed to JC and partially to the training gap. Score revised to 71%."},
       {query:"Invoice", score:71, comment:"Customer reported invoice discrepancy. JC confirmed and notified store. AOI — JC should explain the GWD pointer and how invoice is made."},
       {query:"Refund", score:88, comment:"Customer had double payment. Consultant should have used better phrases like 'while we understand the refund is much awaited, we request you to kindly wait till 7-10 working days at maximum'."},
       {query:"Order Status", score:94, comment:"Good Job! Just 1 AOI — tagged as manufacturing delay, it was transit delay."},
