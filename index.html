@@ -311,7 +311,7 @@ section+section{border-top:1px solid var(--section-bdr);}
       <div class="hs"><div class="hs-val gold" data-countup="86" data-suffix="%">86%</div><div class="hs-lbl">Team CQ</div></div>
       <div class="hs"><div class="hs-val white" data-countup="95" data-suffix="%">95%</div><div class="hs-lbl">Team Target</div></div>
       <div class="hs"><div class="hs-val green" data-countup="0">0</div><div class="hs-lbl">NCF</div></div>
-      <div class="hs"><div class="hs-val red" data-countup="52">52</div><div class="hs-lbl">Total Errors</div></div>
+      <div class="hs"><div class="hs-val red" data-countup="31">31</div><div class="hs-lbl">Total Errors</div></div>
     </div>
   </div>
 </div>
@@ -393,7 +393,7 @@ section+section{border-top:1px solid var(--section-bdr);}
       <div class="ic gold"><div class="ic-label">⭐ Top Performers</div><div class="ic-val gold">90%</div><div class="ic-sub"><strong>Ansari_S &amp; Jinal_K</strong> lead the team — both at 90%, closest to the 95% target.</div></div>
       <div class="ic green"><div class="ic-label">✅ Zero NCF</div><div class="ic-val green">0</div><div class="ic-sub">All 5 agents maintained zero Non CaratLane Friendly cases this month.</div></div>
       <div class="ic red"><div class="ic-label">⚠ Needs Attention</div><div class="ic-val red">76%</div><div class="ic-sub"><strong>Surbhi_A</strong> — lowest CQ, 19% below target. Focused coaching required.</div></div>
-      <div class="ic orange"><div class="ic-label">🔴 Most Error-Prone Parameter</div><div class="ic-val orange">16</div><div class="ic-sub"><strong>Solution & Recommendation</strong> — incomplete info & ownership gaps driving it.</div></div>
+      <div class="ic orange"><div class="ic-label">🔴 Most Error-Prone Parameter</div><div class="ic-val orange">11</div><div class="ic-sub"><strong>Solution & Recommendation</strong> — incomplete info & ownership gaps driving it.</div></div>
       <div class="ic blue"><div class="ic-label">📊 Avg Gap to Target</div><div class="ic-val blue">–9%</div><div class="ic-sub">Team average is 86% vs 95% target. Consistent improvement needed.</div></div>
       <div class="ic purple"><div class="ic-label">🏷 Etiquette Win</div><div class="ic-val purple">0</div><div class="ic-sub"><strong>Call/Chat Etiquette</strong> — zero errors this month. Professional standards maintained.</div></div>
     </div>
@@ -401,11 +401,11 @@ section+section{border-top:1px solid var(--section-bdr);}
       <div class="ic gold">
         <div class="ic-label">📌 Agents Ranked by Total Errors</div>
         <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;">
-          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Surbhi_A</span><span style="font-weight:700;color:var(--red);">18 errors</span></div>
-          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Preethi_V</span><span style="font-weight:700;color:var(--orange);">10 errors</span></div>
-          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Jinal_K</span><span style="font-weight:700;color:var(--orange);">9 errors</span></div>
-          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Ghouse_M</span><span style="font-weight:700;color:var(--blue);">8 errors</span></div>
-          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Ansari_S</span><span style="font-weight:700;color:var(--blue);">7 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Surbhi_A</span><span style="font-weight:700;color:var(--red);">10 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Preethi_V</span><span style="font-weight:700;color:var(--orange);">7 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Ansari_S</span><span style="font-weight:700;color:var(--blue);">5 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Ghouse_M</span><span style="font-weight:700;color:var(--blue);">5 errors</span></div>
+          <div style="display:flex;justify-content:center;align-items:center;gap:12px;font-size:13px;"><span style="font-weight:600;color:var(--txt)">Jinal_K</span><span style="font-weight:700;color:var(--blue);">4 errors</span></div>
         </div>
       </div>
       <div class="ic blue">
@@ -430,39 +430,38 @@ section+section{border-top:1px solid var(--section-bdr);}
     <div class="param-block">
       <div class="param-hdr" onclick="toggleParam('sol')">
         <span class="param-hdr-name">Solution &amp; Recommendation</span>
-        <div class="param-hdr-right"><span class="param-hdr-count">16 errors</span><span class="param-arrow" id="parr-sol">▼</span></div>
+        <div class="param-hdr-right"><span class="param-hdr-count">11 errors</span><span class="param-arrow" id="parr-sol">▼</span></div>
       </div>
-      <div class="param-body" id="pbody-sol">
-        <div class="param-agent-row" onclick="openModal('preethi','sol')"><span class="par-name">Preethi_V</span><span class="par-count c5">5</span><button class="par-btn">View Cases</button></div>
-        <div class="param-agent-row" onclick="openModal('jinal','sol')"><span class="par-name">Jinal_K</span><span class="par-count c4">4</span><button class="par-btn">View Cases</button></div>
-        <div class="param-agent-row" onclick="openModal('surbhi','sol')"><span class="par-name">Surbhi_A</span><span class="par-count c4">4</span><button class="par-btn">View Cases</button></div>
-        <div class="param-agent-row" onclick="openModal('ghouse','sol')"><span class="par-name">Ghouse_M</span><span class="par-count c3">3</span><button class="par-btn">View Cases</button></div>
+            <div class="param-body" id="pbody-sol">
+        <div class="param-agent-row" onclick="openModal('preethi','sol')"><span class="par-name">Preethi_V</span><span class="par-count c4">4</span><button class="par-btn">View Cases</button></div>
+        <div class="param-agent-row" onclick="openModal('surbhi','sol')"><span class="par-name">Surbhi_A</span><span class="par-count c3">3</span><button class="par-btn">View Cases</button></div>
+        <div class="param-agent-row" onclick="openModal('jinal','sol')"><span class="par-name">Jinal_K</span><span class="par-count c2">2</span><button class="par-btn">View Cases</button></div>
+        <div class="param-agent-row" onclick="openModal('ghouse','sol')"><span class="par-name">Ghouse_M</span><span class="par-count c2">2</span><button class="par-btn">View Cases</button></div>
       </div>
     </div>
 
     <div class="param-block">
       <div class="param-hdr" onclick="toggleParam('ss')">
         <span class="param-hdr-name">Soft Skills</span>
-        <div class="param-hdr-right"><span class="param-hdr-count">11 errors</span><span class="param-arrow" id="parr-ss">▼</span></div>
+        <div class="param-hdr-right"><span class="param-hdr-count">5 errors</span><span class="param-arrow" id="parr-ss">▼</span></div>
       </div>
-      <div class="param-body" id="pbody-ss">
-        <div class="param-agent-row" onclick="openModal('ansari','ss')"><span class="par-name">Ansari_S</span><span class="par-count c5">5</span><button class="par-btn">View Cases</button></div>
-        <div class="param-agent-row" onclick="openModal('surbhi','ss')"><span class="par-name">Surbhi_A</span><span class="par-count c4">4</span><button class="par-btn">View Cases</button></div>
+            <div class="param-body" id="pbody-ss">
+        <div class="param-agent-row" onclick="openModal('ansari','ss')"><span class="par-name">Ansari_S</span><span class="par-count c2">2</span><button class="par-btn">View Cases</button></div>
+        <div class="param-agent-row" onclick="openModal('surbhi','ss')"><span class="par-name">Surbhi_A</span><span class="par-count c2">2</span><button class="par-btn">View Cases</button></div>
         <div class="param-agent-row" onclick="openModal('ghouse','ss')"><span class="par-name">Ghouse_M</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
-        <div class="param-agent-row" onclick="openModal('jinal','ss')"><span class="par-name">Jinal_K</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
       </div>
     </div>
 
     <div class="param-block">
       <div class="param-hdr" onclick="toggleParam('prob')">
         <span class="param-hdr-name">Probing</span>
-        <div class="param-hdr-right"><span class="param-hdr-count">12 errors</span><span class="param-arrow" id="parr-prob">▼</span></div>
+        <div class="param-hdr-right"><span class="param-hdr-count">8 errors</span><span class="param-arrow" id="parr-prob">▼</span></div>
       </div>
-      <div class="param-body" id="pbody-prob">
-        <div class="param-agent-row" onclick="openModal('surbhi','prob')"><span class="par-name">Surbhi_A</span><span class="par-count c5">5</span><button class="par-btn">View Cases</button></div>
-        <div class="param-agent-row" onclick="openModal('ghouse','prob')"><span class="par-name">Ghouse_M</span><span class="par-count c3">3</span><button class="par-btn">View Cases</button></div>
+            <div class="param-body" id="pbody-prob">
+        <div class="param-agent-row" onclick="openModal('surbhi','prob')"><span class="par-name">Surbhi_A</span><span class="par-count c3">3</span><button class="par-btn">View Cases</button></div>
         <div class="param-agent-row" onclick="openModal('ansari','prob')"><span class="par-name">Ansari_S</span><span class="par-count c2">2</span><button class="par-btn">View Cases</button></div>
         <div class="param-agent-row" onclick="openModal('jinal','prob')"><span class="par-name">Jinal_K</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
+        <div class="param-agent-row" onclick="openModal('ghouse','prob')"><span class="par-name">Ghouse_M</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
         <div class="param-agent-row" onclick="openModal('preethi','prob')"><span class="par-name">Preethi_V</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
       </div>
     </div>
@@ -470,24 +469,24 @@ section+section{border-top:1px solid var(--section-bdr);}
     <div class="param-block">
       <div class="param-hdr" onclick="toggleParam('tag')">
         <span class="param-hdr-name">Tagging</span>
-        <div class="param-hdr-right"><span class="param-hdr-count">8 errors</span><span class="param-arrow" id="parr-tag">▼</span></div>
+        <div class="param-hdr-right"><span class="param-hdr-count">5 errors</span><span class="param-arrow" id="parr-tag">▼</span></div>
       </div>
-      <div class="param-body" id="pbody-tag">
-        <div class="param-agent-row" onclick="openModal('preethi','tag')"><span class="par-name">Preethi_V</span><span class="par-count c4">4</span><button class="par-btn">View Cases</button></div>
-        <div class="param-agent-row" onclick="openModal('surbhi','tag')"><span class="par-name">Surbhi_A</span><span class="par-count c2">2</span><button class="par-btn">View Cases</button></div>
-        <div class="param-agent-row" onclick="openModal('ghouse','tag')"><span class="par-name">Ghouse_M</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
+            <div class="param-body" id="pbody-tag">
+        <div class="param-agent-row" onclick="openModal('preethi','tag')"><span class="par-name">Preethi_V</span><span class="par-count c2">2</span><button class="par-btn">View Cases</button></div>
         <div class="param-agent-row" onclick="openModal('ansari','tag')"><span class="par-name">Ansari_S</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
+        <div class="param-agent-row" onclick="openModal('ghouse','tag')"><span class="par-name">Ghouse_M</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
+        <div class="param-agent-row" onclick="openModal('surbhi','tag')"><span class="par-name">Surbhi_A</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
       </div>
     </div>
 
     <div class="param-block">
       <div class="param-hdr" onclick="toggleParam('fu')">
         <span class="param-hdr-name">Follow Up</span>
-        <div class="param-hdr-right"><span class="param-hdr-count">5 errors</span><span class="param-arrow" id="parr-fu">▼</span></div>
+        <div class="param-hdr-right"><span class="param-hdr-count">2 errors</span><span class="param-arrow" id="parr-fu">▼</span></div>
       </div>
-      <div class="param-body" id="pbody-fu">
-        <div class="param-agent-row" onclick="openModal('jinal','fu')"><span class="par-name">Jinal_K</span><span class="par-count c3">3</span><button class="par-btn">View Cases</button></div>
-        <div class="param-agent-row" onclick="openModal('surbhi','fu')"><span class="par-name">Surbhi_A</span><span class="par-count c2">2</span><button class="par-btn">View Cases</button></div>
+            <div class="param-body" id="pbody-fu">
+        <div class="param-agent-row" onclick="openModal('jinal','fu')"><span class="par-name">Jinal_K</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
+        <div class="param-agent-row" onclick="openModal('surbhi','fu')"><span class="par-name">Surbhi_A</span><span class="par-count c1">1</span><button class="par-btn">View Cases</button></div>
       </div>
     </div>
 
