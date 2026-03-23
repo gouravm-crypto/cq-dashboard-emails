@@ -12,12 +12,12 @@ function initCharts() {
   new Chart(document.getElementById('scoreChart'), {
     type: 'bar',
     data: {
-      labels: ['Ansari_S','Ghouse_M','Jinal_K','Preethi_V','Surbhi_A'],
+      labels: ['Ansari_S','Jinal_K','Ghouse_M','Preethi_V','Surbhi_A'],
       datasets: [
         {
           label: 'CQ Score',
-          data: [90, 89, 88, 87, 76],
-          backgroundColor: ['#c8a846','#c8a846','#3a9e50','#3a9e50','#e07030'],
+          data: [90, 90, 89, 87, 76],
+          backgroundColor: ['#c8a846','#c8a846','#c8a846','#3a9e50','#e07030'],
           borderRadius: 6,
           barPercentage: 0.58,
           categoryPercentage: 0.8,
@@ -186,14 +186,14 @@ function buildHeatmap() {
   const container = document.getElementById('heatmapContainer');
   if (!container) return;
 
-  const agents = ['Ansari_S','Ghouse_M','Jinal_K','Preethi_V','Surbhi_A'];
+  const agents = ['Ansari_S','Jinal_K','Ghouse_M','Preethi_V','Surbhi_A'];
   const params = ['Soft Skills','Solution','Probing','Tagging','Follow Up'];
   const errors = [
-    [5, 0, 2, 1, 0],
-    [1, 3, 3, 1, 0],
-    [1, 4, 1, 0, 3],
-    [0, 5, 1, 4, 0],
-    [4, 4, 5, 2, 2]
+    [5, 0, 2, 1, 0],  // Ansari
+    [0, 4, 1, 0, 3],  // Jinal - SS now 0 (case 0 revised to 100%)
+    [1, 3, 3, 1, 0],  // Ghouse
+    [0, 5, 1, 4, 0],  // Preethi
+    [4, 4, 5, 2, 2]   // Surbhi
   ];
 
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
