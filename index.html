@@ -186,12 +186,17 @@ section+section{border-top:1px solid var(--section-bdr);}
 .par-btn:hover{background:var(--gold-pale);transform:scale(1.05);}
 
 /* ── CHARTS ── */
-.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
-.chart-card{background:var(--chart-bg);border:1.5px solid var(--card-bdr);border-radius:14px;padding:22px;box-shadow:var(--sh-sm);text-align:left;transition:transform .2s,box-shadow .2s;}
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;}
+.chart-card{background:var(--chart-bg);border:1.5px solid var(--card-bdr);border-radius:14px;padding:22px 22px 18px;box-shadow:var(--sh-sm);text-align:left;transition:transform .2s,box-shadow .2s;}
 .chart-card:hover{transform:translateY(-2px);box-shadow:var(--sh-md);}
-.cc-title{font-family:Georgia,serif;font-size:18px;font-weight:700;color:var(--txt);margin-bottom:2px;}
-.cc-sub{font-size:11px;color:var(--txt3);margin-bottom:16px;}
-.ch{position:relative;height:240px;}
+.heatmap-card{background:var(--chart-bg);border:1.5px solid var(--card-bdr);border-radius:14px;padding:22px 22px 18px;box-shadow:var(--sh-sm);transition:transform .2s,box-shadow .2s;}
+.heatmap-card:hover{transform:translateY(-2px);box-shadow:var(--sh-md);}
+.cc-title{font-family:Georgia,serif;font-size:17px;font-weight:700;color:var(--txt);margin-bottom:3px;}
+.cc-sub{font-size:11px;color:var(--txt3);margin-bottom:14px;line-height:1.4;}
+.ch{position:relative;width:100%;height:230px;}
+.ch canvas{position:absolute;top:0;left:0;width:100%!important;height:100%!important;}
+#heatmapContainer table th,#heatmapContainer table td{color:var(--txt2);}
+#heatmapContainer table th{color:var(--txt3);}
 
 /* ── MODAL ── */
 #modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);backdrop-filter:blur(10px);z-index:999;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s;}
@@ -260,6 +265,7 @@ section+section{border-top:1px solid var(--section-bdr);}
   .hero-stats{flex-wrap:wrap;}
   .insight-grid,.insight-grid-2,.chart-grid{grid-template-columns:1fr;}
   .param-mini-grid{grid-template-columns:repeat(3,1fr);}
+  .ch{height:200px;}
 }
 
 /* ── PDF PRINT ── */
@@ -344,17 +350,17 @@ section+section{border-top:1px solid var(--section-bdr);}
           <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bar-gold" data-width="90"></div></div><span class="pct c-gold">90%</span></div></td>
           <td><span class="ti ti-near">–5% to target</span></td>
         </tr>
+        <tr onclick="openModal('ghouse')">
+          <td><div class="agent-cell"><div class="agent-av" style="background:#2563eb;">GM</div><div><div class="agent-nm">Ghouse_M</div><div class="agent-hint">Click to view full report →</div></div></div></td>
+          <td>7</td><td><span class="ncf-badge">0</span></td>
+          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bar-gold" data-width="89"></div></div><span class="pct c-gold">89%</span></div></td>
+          <td><span class="ti ti-near">–6% to target</span></td>
+        </tr>
         <tr onclick="openModal('jinal')">
           <td><div class="agent-cell"><div class="agent-av" style="background:#16a34a;">JK</div><div><div class="agent-nm">Jinal_K</div><div class="agent-hint">Click to view full report →</div></div></div></td>
           <td>7</td><td><span class="ncf-badge">0</span></td>
           <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bar-green" data-width="88"></div></div><span class="pct c-green">88%</span></div></td>
           <td><span class="ti ti-below">–7% to target</span></td>
-        </tr>
-        <tr onclick="openModal('ghouse')">
-          <td><div class="agent-cell"><div class="agent-av" style="background:#2563eb;">GM</div><div><div class="agent-nm">Ghouse_M</div><div class="agent-hint">Click to view full report →</div></div></div></td>
-          <td>7</td><td><span class="ncf-badge">0</span></td>
-          <td><div class="bar-cell"><div class="bar-track"><div class="bar-fill bar-green" data-width="89"></div></div><span class="pct c-green">89%</span></div></td>
-          <td><span class="ti ti-near">–6% to target</span></td>
         </tr>
         <tr onclick="openModal('preethi')">
           <td><div class="agent-cell"><div class="agent-av" style="background:#7c3aed;">PV</div><div><div class="agent-nm">Preethi_V</div><div class="agent-hint">Click to view full report →</div></div></div></td>
@@ -406,8 +412,8 @@ section+section{border-top:1px solid var(--section-bdr);}
         <div class="ic-label">🎯 Biggest Gap Per Agent</div>
         <div style="margin-top:10px;display:flex;flex-direction:column;gap:7px;text-align:center;">
           <div style="font-size:13px;color:var(--txt2);"><strong>Ansari_S</strong> — Soft Skills (empathy, ownership phrases)</div>
-          <div style="font-size:13px;color:var(--txt2);"><strong>Jinal_K</strong> — Solution (incomplete first replies)</div>
           <div style="font-size:13px;color:var(--txt2);"><strong>Ghouse_M</strong> — Probing (resolution-linked) &amp; policy updates</div>
+          <div style="font-size:13px;color:var(--txt2);"><strong>Jinal_K</strong> — Solution (incomplete first replies)</div>
           <div style="font-size:13px;color:var(--txt2);"><strong>Preethi_V</strong> — Tagging (disposition errors)</div>
           <div style="font-size:13px;color:var(--txt2);"><strong>Surbhi_A</strong> — Solution &amp; Probing (multiple gaps)</div>
         </div>
@@ -497,12 +503,28 @@ section+section{border-top:1px solid var(--section-bdr);}
   <section>
     <div class="sec-ey">Visual Analysis</div>
     <div class="sec-ttl">Charts &amp; Distribution</div>
-    <div class="sec-sub">Visual breakdown of CQ scores vs target and error distribution across parameters.</div>
+    <div class="sec-sub">Visual breakdown of CQ scores, error distribution, agent errors, and parameter heatmap.</div>
     <div class="chart-grid">
-      <div class="chart-card"><div class="cc-title">CQ Score vs Target</div><div class="cc-sub">Agent scores against individual (85%) and team (95%) targets</div><div class="ch"><canvas id="scoreChart"></canvas></div></div>
-      <div class="chart-card"><div class="cc-title">Error Distribution</div><div class="cc-sub">Total errors by parameter category</div><div class="ch"><canvas id="errorChart"></canvas></div></div>
-      <div class="chart-card"><div class="cc-title">Errors per Agent</div><div class="cc-sub">Total audit errors by individual agent</div><div class="ch"><canvas id="agentErrorChart"></canvas></div></div>
-      <div class="chart-card"><div class="cc-title">Parameter Health</div><div class="cc-sub">Error count per parameter — lower is better</div><div class="ch"><canvas id="paramRadar"></canvas></div></div>
+      <div class="chart-card">
+        <div class="cc-title">CQ Score vs Targets</div>
+        <div class="cc-sub">Agent scores vs individual (85%) &amp; team (95%) targets — sorted high to low</div>
+        <div class="ch"><canvas id="scoreChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="cc-title">Error Distribution</div>
+        <div class="cc-sub">Total errors split by parameter category</div>
+        <div class="ch"><canvas id="errorChart"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="cc-title">Errors per Agent</div>
+        <div class="cc-sub">Total audit errors by agent — highest to lowest</div>
+        <div class="ch"><canvas id="agentErrorChart"></canvas></div>
+      </div>
+      <div class="heatmap-card">
+        <div class="cc-title">Error Heatmap</div>
+        <div class="cc-sub">Agent × parameter breakdown — spot who struggles where at a glance</div>
+        <div id="heatmapContainer"></div>
+      </div>
     </div>
   </section>
 
