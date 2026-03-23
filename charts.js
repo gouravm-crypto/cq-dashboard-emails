@@ -133,11 +133,11 @@ function initCharts() {
   new Chart(document.getElementById('agentErrorChart'), {
     type: 'bar',
     data: {
-      labels: ['Surbhi_A','Preethi_V','Jinal_K','Ghouse_M','Ansari_S'],
+      labels: ['Surbhi_A','Preethi_V','Ansari_S','Ghouse_M','Jinal_K'],
       datasets: [{
         label: 'Total Errors',
-        data: [18, 10, 9, 8, 7],
-        backgroundColor: ['#dc2626','#ea580c','#ea580c','#2563eb','#2563eb'],
+        data: [10, 7, 5, 5, 4],
+        backgroundColor: ['#dc2626','#ea580c','#2563eb','#2563eb','#2563eb'],
         borderRadius: 6,
         barPercentage: 0.58,
         categoryPercentage: 0.8
@@ -152,7 +152,7 @@ function initCharts() {
       plugins: { tooltip, legend: { display: false } },
       scales: {
         x: {
-          min: 0, max: 22,
+          min: 0, max: 14,
           ticks: { font: { ...font, size: 11 }, stepSize: 4 },
           grid: { color: 'rgba(128,128,128,.1)' }
         },
