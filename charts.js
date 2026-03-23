@@ -189,11 +189,11 @@ function buildHeatmap() {
   const agents = ['Ansari_S','Jinal_K','Ghouse_M','Preethi_V','Surbhi_A'];
   const params = ['Soft Skills','Solution','Probing','Tagging','Follow Up'];
   const errors = [
-    [5, 0, 2, 1, 0],  // Ansari
-    [0, 4, 1, 0, 3],  // Jinal - SS now 0 (case 0 revised to 100%)
-    [1, 3, 3, 1, 0],  // Ghouse
-    [0, 5, 1, 4, 0],  // Preethi
-    [4, 4, 5, 2, 2]   // Surbhi
+    [2, 0, 2, 1, 0],  // Ansari  — total 5
+    [0, 2, 1, 0, 1],  // Jinal   — total 4
+    [1, 2, 1, 1, 0],  // Ghouse  — total 5
+    [0, 4, 1, 2, 0],  // Preethi — total 7
+    [2, 3, 3, 1, 1]   // Surbhi  — total 10
   ];
 
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
