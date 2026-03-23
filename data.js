@@ -21,7 +21,7 @@ const AGENTS = {
   },
   jinal: {
     name:"Jinal_K", initials:"JK", color:"#16a34a",
-    cq:88, audits:7, ncf:0, totalErrors:9,
+    cq:90, audits:7, ncf:0, totalErrors:9,
     params:{ss:1, sol:4, prob:1, tag:0, fu:3},
     aois:[
       {cat:"sol", label:"Solution", text:"First replies need to be more complete — include GWD details, bank update steps, and next actions upfront to avoid back-and-forth with the customer."},
@@ -29,7 +29,7 @@ const AGENTS = {
       {cat:"prob", label:"Probing", text:"One audit had an irrelevant first reply — ensure the response directly addresses what the customer asked before anything else."}
     ],
     cases:[
-      {query:"Replacement", score:86, comment:"Should have used better phrases for assurance and empathy."},
+      {query:"Replacement", score:100, comment:"Score revised to 100%. The AOI on assurance and empathy phrases has been given as feedback rather than marked as an error. Well handled overall — feedback noted for continuous improvement."},
       {query:"Digi Gold", score:100, comment:"Customer reached out regarding Digi Gold payment not yet credited. JC gave the right info."},
       {query:"Order Status", score:100, comment:"Well Done!"},
       {query:"Order Cancellation", score:80, comment:"Online order delayed due to ERP. Jinal assisted with re-attempt and refund. AOI — could have proactively informed about GWD and invoice refund in two parts, and asked customer to update bank details on app prior."},
