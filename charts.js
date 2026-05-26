@@ -12,12 +12,12 @@ function initCharts() {
   new Chart(document.getElementById('scoreChart'), {
     type: 'bar',
     data: {
-      labels: ['Ansari_S','Jinal_K','Ghouse_M','Preethi_V','Surbhi_A'],
+      labels: ['Preethi_V','Ansari_S','Ghouse_M','Safura_B','Jinal_K','Surbhi_A'],
       datasets: [
         {
           label: 'CQ Score',
-          data: [90, 90, 89, 87, 76],
-          backgroundColor: ['#c8a846','#c8a846','#c8a846','#3a9e50','#e07030'],
+          data: [98, 94, 93, 92, 86, 63],
+          backgroundColor: ['#16a34a','#c8a846','#c8a846','#0891b2','#ea580c','#dc2626'],
           borderRadius: 6,
           barPercentage: 0.58,
           categoryPercentage: 0.8,
@@ -25,13 +25,13 @@ function initCharts() {
         },
         {
           label: 'Team Target 95%',
-          data: [95,95,95,95,95],
+          data: [95,95,95,95,95,95],
           type: 'line', borderColor: '#dc2626', borderWidth: 2,
           borderDash: [6,4], pointRadius: 0, fill: false, order: 1
         },
         {
           label: 'Individual Target 85%',
-          data: [85,85,85,85,85],
+          data: [85,85,85,85,85,85],
           type: 'line', borderColor: '#f59e0b', borderWidth: 1.5,
           borderDash: [3,3], pointRadius: 0, fill: false, order: 1
         }
@@ -51,7 +51,7 @@ function initCharts() {
       },
       scales: {
         y: {
-          min: 60, max: 100,
+          min: 50, max: 100,
           ticks: { callback: v => v + '%', font: { ...font, size: 11 }, stepSize: 10 },
           grid: { color: 'rgba(128,128,128,.1)' }
         },
@@ -82,10 +82,10 @@ function initCharts() {
   new Chart(document.getElementById('errorChart'), {
     type: 'doughnut',
     data: {
-      labels: ['Solution & Rec.','Soft Skills','Probing','Tagging','Follow Up'],
+      labels: ['Soft Skills','Solution & Rec.','Follow Up','Probing','Tagging'],
       datasets: [{
-        data: [16, 11, 12, 8, 5],
-        backgroundColor: ['#dc2626','#ea580c','#2563eb','#7c3aed','#16a34a'],
+        data: [7, 9, 8, 2, 0],
+        backgroundColor: ['#ea580c','#dc2626','#16a34a','#2563eb','#7c3aed'],
         borderWidth: 2, borderColor: '#fff', hoverOffset: 8
       }]
     },
@@ -133,11 +133,11 @@ function initCharts() {
   new Chart(document.getElementById('agentErrorChart'), {
     type: 'bar',
     data: {
-      labels: ['Surbhi_A','Preethi_V','Ansari_S','Ghouse_M','Jinal_K'],
+      labels: ['Surbhi_A','Ghouse_M','Jinal_K','Ansari_S','Safura_B','Preethi_V'],
       datasets: [{
         label: 'Total Errors',
-        data: [10, 7, 5, 5, 4],
-        backgroundColor: ['#dc2626','#ea580c','#2563eb','#2563eb','#2563eb'],
+        data: [12, 5, 2, 3, 2, 2],
+        backgroundColor: ['#dc2626','#ea580c','#2563eb','#2563eb','#0891b2','#16a34a'],
         borderRadius: 6,
         barPercentage: 0.58,
         categoryPercentage: 0.8
@@ -152,7 +152,7 @@ function initCharts() {
       plugins: { tooltip, legend: { display: false } },
       scales: {
         x: {
-          min: 0, max: 14,
+          min: 0, max: 16,
           ticks: { font: { ...font, size: 11 }, stepSize: 4 },
           grid: { color: 'rgba(128,128,128,.1)' }
         },
@@ -186,14 +186,15 @@ function buildHeatmap() {
   const container = document.getElementById('heatmapContainer');
   if (!container) return;
 
-  const agents = ['Ansari_S','Jinal_K','Ghouse_M','Preethi_V','Surbhi_A'];
+  const agents = ['Preethi_V','Ansari_S','Ghouse_M','Safura_B','Jinal_K','Surbhi_A'];
   const params = ['Soft Skills','Solution','Probing','Tagging','Follow Up'];
   const errors = [
-    [2, 0, 2, 1, 0],  // Ansari  — total 5
-    [0, 2, 1, 0, 1],  // Jinal   — total 4
-    [1, 2, 1, 1, 0],  // Ghouse  — total 5
-    [0, 4, 1, 2, 0],  // Preethi — total 7
-    [2, 3, 3, 1, 1]   // Surbhi  — total 10
+    [0, 0, 0, 0, 2],  // Preethi  — total 2
+    [0, 1, 0, 0, 2],  // Ansari   — total 3
+    [0, 3, 2, 0, 0],  // Ghouse   — total 5
+    [2, 0, 0, 0, 0],  // Safura   — total 2
+    [0, 0, 0, 0, 2],  // Jinal    — total 2
+    [5, 5, 0, 0, 2]   // Surbhi   — total 12
   ];
 
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -240,7 +241,6 @@ function buildHeatmap() {
 
 document.addEventListener('DOMContentLoaded', () => {
   initCharts();
-  // Rebuild heatmap colors when dark mode toggles
   new MutationObserver(() => buildHeatmap())
     .observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
 });
