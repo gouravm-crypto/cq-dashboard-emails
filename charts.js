@@ -12,12 +12,12 @@ function initCharts() {
   new Chart(document.getElementById('scoreChart'), {
     type: 'bar',
     data: {
-      labels: ['Preethi_V','Ansari_S','Ghouse_M','Safura_B','Jinal_K','Surbhi_A'],
+      labels: ['Safura_B','Preethi_V','Bhavana_J','Ansari_S','Surbhi_A','Ghouse_M','Jinal_K'],
       datasets: [
         {
           label: 'CQ Score',
-          data: [98, 94, 93, 92, 86, 63],
-          backgroundColor: ['#16a34a','#c8a846','#c8a846','#0891b2','#ea580c','#dc2626'],
+          data: [96, 95, 91, 90, 87, 62, 55],
+          backgroundColor: ['#0891b2','#16a34a','#0d9488','#c8a846','#ea580c','#dc2626','#dc2626'],
           borderRadius: 6,
           barPercentage: 0.58,
           categoryPercentage: 0.8,
@@ -25,13 +25,13 @@ function initCharts() {
         },
         {
           label: 'Team Target 95%',
-          data: [95,95,95,95,95,95],
+          data: [95,95,95,95,95,95,95],
           type: 'line', borderColor: '#dc2626', borderWidth: 2,
           borderDash: [6,4], pointRadius: 0, fill: false, order: 1
         },
         {
           label: 'Individual Target 85%',
-          data: [85,85,85,85,85,85],
+          data: [85,85,85,85,85,85,85],
           type: 'line', borderColor: '#f59e0b', borderWidth: 1.5,
           borderDash: [3,3], pointRadius: 0, fill: false, order: 1
         }
@@ -51,7 +51,7 @@ function initCharts() {
       },
       scales: {
         y: {
-          min: 50, max: 100,
+          min: 40, max: 100,
           ticks: { callback: v => v + '%', font: { ...font, size: 11 }, stepSize: 10 },
           grid: { color: 'rgba(128,128,128,.1)' }
         },
@@ -79,12 +79,13 @@ function initCharts() {
   });
 
   // ── 2. Error Distribution Doughnut ──
+  // SS:18, Sol:8, FU:3, Prob:0, Tag:0  total:29
   new Chart(document.getElementById('errorChart'), {
     type: 'doughnut',
     data: {
       labels: ['Soft Skills','Solution & Rec.','Follow Up','Probing','Tagging'],
       datasets: [{
-        data: [7, 9, 8, 2, 0],
+        data: [18, 8, 3, 0, 0],
         backgroundColor: ['#ea580c','#dc2626','#16a34a','#2563eb','#7c3aed'],
         borderWidth: 2, borderColor: '#fff', hoverOffset: 8
       }]
@@ -133,11 +134,11 @@ function initCharts() {
   new Chart(document.getElementById('agentErrorChart'), {
     type: 'bar',
     data: {
-      labels: ['Surbhi_A','Ghouse_M','Jinal_K','Ansari_S','Safura_B','Preethi_V'],
+      labels: ['Ghouse_M','Surbhi_A','Jinal_K','Ansari_S','Bhavana_J','Preethi_V','Safura_B'],
       datasets: [{
         label: 'Total Errors',
-        data: [12, 5, 2, 3, 2, 2],
-        backgroundColor: ['#dc2626','#ea580c','#2563eb','#2563eb','#0891b2','#16a34a'],
+        data: [12, 8, 6, 5, 4, 4, 3],
+        backgroundColor: ['#dc2626','#ea580c','#ea580c','#2563eb','#0d9488','#7c3aed','#0891b2'],
         borderRadius: 6,
         barPercentage: 0.58,
         categoryPercentage: 0.8
@@ -186,15 +187,17 @@ function buildHeatmap() {
   const container = document.getElementById('heatmapContainer');
   if (!container) return;
 
-  const agents = ['Preethi_V','Ansari_S','Ghouse_M','Safura_B','Jinal_K','Surbhi_A'];
+  // Sorted high to low by CQ: Safura, Preethi, Bhavana, Ansari, Surbhi, Ghouse, Jinal
+  const agents = ['Safura_B','Preethi_V','Bhavana_J','Ansari_S','Surbhi_A','Ghouse_M','Jinal_K'];
   const params = ['Soft Skills','Solution','Probing','Tagging','Follow Up'];
   const errors = [
-    [0, 0, 0, 0, 2],  // Preethi  — total 2
-    [0, 1, 0, 0, 2],  // Ansari   — total 3
-    [0, 3, 2, 0, 0],  // Ghouse   — total 5
-    [2, 0, 0, 0, 0],  // Safura   — total 2
-    [0, 0, 0, 0, 2],  // Jinal    — total 2
-    [5, 5, 0, 0, 2]   // Surbhi   — total 12
+    [3, 0, 0, 0, 0],  // Safura   — total 3
+    [3, 0, 0, 0, 1],  // Preethi  — total 4
+    [4, 0, 0, 0, 0],  // Bhavana  — total 4
+    [3, 1, 0, 0, 1],  // Ansari   — total 5
+    [7, 1, 0, 0, 0],  // Surbhi   — total 8
+    [7, 3, 0, 0, 2],  // Ghouse   — total 12
+    [0, 4, 0, 0, 2]   // Jinal    — total 6
   ];
 
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';

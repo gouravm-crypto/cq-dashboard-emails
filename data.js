@@ -1,118 +1,147 @@
 const AGENTS = {
+  safura: {
+    name:"Safura_B", initials:"SB", color:"#0891b2",
+    cq:96, audits:7, ncf:0, totalErrors:3,
+    params:{ss:3, sol:0, prob:0, tag:0, fu:0},
+    aois:[
+      {cat:"ss", label:"Soft Skills", text:"Email structure and formatting — on the LTB/LTE case, the email structure was flagged at a brand level. Proper sequencing — greeting, acknowledgement, context, resolution, empathetic closure — must be followed every time. A draft was shared as feedback; please review and apply it going forward."},
+      {cat:"ss", label:"Soft Skills", text:"Grammatical accuracy — on the LTB/LTE case, grammatical errors were found. Proofread every email before sending. Errors in written communication affect brand perception directly."},
+      {cat:"ss", label:"Soft Skills", text:"Store-level specificity — on the delivery case, always specify the store name when referencing a store in an email. It acts as a re-confirmation for the customer and avoids ambiguity."}
+    ],
+    cases:[
+      {query:"Dislike / Feedback", score:100, comment:"Good work on explaining the customer and further acknowledgement."},
+      {query:"Escalation/Complaint", score:100, comment:"Good Work!"},
+      {query:"Delivery Related", score:100, comment:"Good work!! AOI — Please specify the store name as it acts like a re-confirmation."},
+      {query:"Refund", score:100, comment:"Good work!!"},
+      {query:"LTB/LTE", score:57, comment:"Good work!! Internal communication found. AOI — Please structure emails properly. Grammatical errors found. Shared a draft as feedback."},
+      {query:"Random / Enquiry", score:100, comment:"Good Work!!"},
+      {query:"Quality Issues", score:100, comment:"Good work!!"}
+    ],
+    paramCaseMap:{ss:[4], sol:[], prob:[], tag:[], fu:[]}
+  },
+  bhavana: {
+    name:"Bhavana_J", initials:"BJ", color:"#0d9488",
+    cq:91, audits:7, ncf:0, totalErrors:4,
+    params:{ss:4, sol:0, prob:0, tag:0, fu:0},
+    aois:[
+      {cat:"ss", label:"Soft Skills", text:"Empathy when customers follow up repeatedly — on the POP double-payment case, when the customer reached out again as a reminder, Bhavana failed to acknowledge the long wait and delay before responding. Always open with empathy when a customer has been waiting for a resolution."},
+      {cat:"ss", label:"Soft Skills", text:"Email structure on sensitive quality cases — on the earring repair (non-consent size reduction) case, the email needed better sequencing: acknowledge the concern first, apologise for the discomfort, explain what went wrong, share next steps, provide resolution calculations, then close empathetically. This structure must be consistent."},
+      {cat:"ss", label:"Soft Skills", text:"Probing in quality/repair cases — on the repair case, probing around the cause and impact could have been sharper. Understanding the full picture (was it in warranty, what did the customer want) before responding makes the resolution more precise and human."}
+    ],
+    cases:[
+      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
+      {query:"POP Enquiry", score:100, comment:"Good work!!"},
+      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
+      {query:"POP / Double Payment", score:71, comment:"Customer made a double payment from PhonePe for TC. When the customer reached out as a reminder again, Bhavana failed to empathise for the long wait and delay in revert. AOI — acknowledge the customer's frustration before providing updates."},
+      {query:"Refund", score:100, comment:"Good work!!"},
+      {query:"Repair / Quality Issue (Earring GWD)", score:71, comment:"Customer's earrings were cut shorter during repair (non-consent). Bhavana replied but the email could have been structured better. AOI — First acknowledge, apologise, explain what went wrong, share further steps, include resolution draft with calculations, then empathetic closure."},
+      {query:"Grievance", score:100, comment:"Good Work!!"}
+    ],
+    paramCaseMap:{ss:[3,5], sol:[], prob:[], tag:[], fu:[]}
+  },
   ansari: {
     name:"Ansari_S", initials:"AS", color:"#b8860b",
-    cq:94, audits:7, ncf:0, totalErrors:3,
-    params:{ss:0, sol:1, prob:0, tag:0, fu:2},
+    cq:90, audits:7, ncf:0, totalErrors:5,
+    params:{ss:3, sol:1, prob:0, tag:0, fu:1},
     aois:[
-      {cat:"sol", label:"Solution & Rec.", text:"Inform the customer of the resolution plan — on the exchange case, Ansari raised the right ticket but failed to inform the customer that the order would be proceeding as an exchange. Always close the loop with the customer on what action is being taken."},
-      {cat:"fu", label:"Follow Up", text:"Personal follow-up ownership — on the autopay case, a ticket was raised and the support team replied within 10 minutes, but Ansari did not follow up with the customer for 3 days despite committing to a 24–48 hour timeline. Follow through on every commitment made."},
-      {cat:"fu", label:"Follow Up", text:"Acknowledge customer feedback as a learning — on refund cases with repeat complaints, always close with a line like 'We take this feedback seriously and will use it as a learning.' It shows ownership and care."}
+      {cat:"ss", label:"Soft Skills", text:"Empathy when customers have been waiting — on the multi-ticket escalation case, the customer had raised multiple tickets with no response before Ansari replied. Zero empathy was found in the reply. Always acknowledge the customer's frustration explicitly before moving to resolution."},
+      {cat:"sol", label:"Solution & Rec.", text:"Proactive call ownership on sensitive quality cases — on the diamond fall case (2023 order), although Ansari shared the correct policy update, no callback was made to personally address the customer's situation. On cases involving long-standing commitments, a personal call to explain the scenario, check availability of the item, and explore LTE/LTB options would have been far more effective than an email alone."},
+      {cat:"fu", label:"Follow Up", text:"Follow-up through alternative channels — on the diamond fall case, after sharing the resolution by email, Ansari should have called the customer proactively to close the loop personally. A written response alone is insufficient when a customer has an emotionally loaded, long-standing complaint."}
     ],
     cases:[
-      {query:"Grievances / Exchange", score:88, comment:"Customer wanted to exchange or return a product. Ansari raised a support ticket to cancel pickup and convert to exchange. AOI — should have informed the customer that we are proceeding with an exchange, not left them without a clear next step."},
-      {query:"Autopay Issue", score:71, comment:"Customer facing autopay issues. Ansari raised a ticket and the team replied within 10 minutes. AOI — no follow-up made the same day or next day despite committing to 24–48 hours. Ansari should have personally followed through."},
-      {query:"Delivery Related", score:100, comment:"Good Work!!"},
-      {query:"Order Status", score:100, comment:"Good Work!!"},
-      {query:"Order Status", score:100, comment:"Good Work!!"},
-      {query:"Refund", score:100, comment:"Good Work!! AOI — should acknowledge the customer's feedback as a learning opportunity, especially given their previous interactions. A closing line of ownership adds warmth and reassurance."},
-      {query:"Order Status", score:100, comment:"Good Work!!"}
+      {query:"Escalation / Multiple Tickets", score:57, comment:"Customer raised multiple tickets with no response. Ansari replied but with zero empathy. AOI — Acknowledge the customer's frustration before jumping to resolution."},
+      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
+      {query:"Quality Issues / Diamond Fall (2023)", score:71, comment:"Customer's diamond fell off in 2023 and was promised free repair. Policies changed; Ansari shared right details but no callback was made to personally address the customer's frustration. AOI — A call to check if diamond was available, explore LTE/LTB, and offer a human touch would have been ideal."},
+      {query:"Random Enquiry", score:100, comment:"Good work!!"},
+      {query:"Refund", score:100, comment:"Good work!! AOI — Please call the customer to avoid multiple interaction count. BOD given."},
+      {query:"Offers & Discounts", score:100, comment:"Good work!! AOI — Please appreciate the customer for their loyalty towards CL."},
+      {query:"Random Enquiry", score:100, comment:"Good work!!"}
     ],
-    paramCaseMap:{ss:[], sol:[0], prob:[], tag:[], fu:[1,5]}
-  },
-  ghouse: {
-    name:"Ghouse_M", initials:"GM", color:"#2563eb",
-    cq:93, audits:7, ncf:0, totalErrors:5,
-    params:{ss:0, sol:3, prob:2, tag:0, fu:0},
-    aois:[
-      {cat:"sol", label:"Solution & Rec.", text:"Acknowledge what the customer is actually asking before moving to resolution — on the ring size case, the customer explicitly requested a cash refund. Ghouse provided a replacement solution without acknowledging the refund request first. A mandatory acknowledgement must come before any alternative is pitched."},
-      {cat:"prob", label:"Probing", text:"Use the information already available — on the callback case, the customer had shared their registered mobile number. Ghouse replied asking for email and order details that could have been fetched from the mobile number directly. Always check Oneview first."},
-      {cat:"sol", label:"Solution & Rec.", text:"Take personalised ownership when a customer has a store complaint — if a customer has already had a poor store experience, route them through backend contact (call or email), not back to the same store. The customer would have been more comfortable speaking to the backend team directly."}
-    ],
-    cases:[
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Ring Size / TC Grievance", score:86, comment:"Customer placed order at store using TC at wrong ring size and requested a cash refund. Ghouse provided a replacement without acknowledging the refund request. AOI — acknowledge the customer's request first, then offer the alternative."},
-      {query:"Order Status / EDD Missed", score:100, comment:"Customer reached out regarding delayed delivery. Ghouse raised a ticket with logistics and shared the update. Good work."},
-      {query:"Store Complaint / Callback", score:67, comment:"Customer wanted a callback regarding order status. Ghouse replied asking for email and order details that were already available via their mobile number. AOI — should have fetched info from Oneview, called the customer directly, and handled the store complaint personally."},
-      {query:"Product Enquiry", score:100, comment:"Customer enquired about a product's stock availability. Ghouse addressed the query and raised a callback lead for the pre-sales team. Good work."}
-    ],
-    paramCaseMap:{ss:[], sol:[3,5,5], prob:[5,5], tag:[], fu:[]}
-  },
-  jinal: {
-    name:"Jinal_K", initials:"JK", color:"#16a34a",
-    cq:86, audits:7, ncf:1, totalErrors:2,
-    params:{ss:0, sol:0, prob:0, tag:0, fu:2},
-    aois:[
-      {cat:"fu", label:"Follow Up", text:"Follow up on time — the NCF case involved a Treasure Chest payment query where the customer had shared their bank statement as requested. Jinal failed to reply, turning it into a contactus NCF. Always action pending replies before closing."},
-      {cat:"fu", label:"Follow Up", text:"Language quality — replace 'repeat customer' with 'loyal customer'. This small shift in phrasing reflects warmth and recognition of the customer relationship. Language choice matters in every outbound email."}
-    ],
-    cases:[
-      {query:"Escalation", score:100, comment:"Good work!!"},
-      {query:"Treasure Chest Payment", score:0, comment:"NCF — Customer reached out regarding a Treasure Chest payment of ₹1,000. Jinal asked for bank statement, customer shared it, but Jinal failed to reply. Since it was a ContactUs case, this is an NCF. AOI — always follow up on pending replies before ticket is closed."},
-      {query:"Grievance", score:100, comment:"Good work!! AOI — replace 'repeat customer' with 'loyal customer'. A small but meaningful shift in language that adds warmth."},
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"15 Days Money Back", score:100, comment:"Good Work!!"}
-    ],
-    paramCaseMap:{ss:[], sol:[], prob:[], tag:[], fu:[1,2]}
+    paramCaseMap:{ss:[0], sol:[2], prob:[], tag:[], fu:[2]}
   },
   preethi: {
     name:"Preethi_V", initials:"PV", color:"#7c3aed",
-    cq:98, audits:7, ncf:0, totalErrors:2,
-    params:{ss:0, sol:0, prob:0, tag:0, fu:2},
+    cq:95, audits:7, ncf:0, totalErrors:4,
+    params:{ss:3, sol:0, prob:0, tag:0, fu:1},
     aois:[
-      {cat:"fu", label:"Follow Up", text:"Follow up on time — one audit had a good resolution but the follow-up was delayed. Timely follow-through after resolution is as important as the resolution itself. Don't leave the customer waiting without an update."},
-      {cat:"sol", label:"Solution & Rec.", text:"Process completeness — when Priority Request is disabled, raise an Order Status SR ticket proactively. Don't leave the customer without an alternative escalation path. Know your workarounds."}
+      {cat:"ss", label:"Soft Skills", text:"Empathy and grammar on payment-related cases — on the CTC instalment case, empathy was missed entirely and grammatical errors were found. Should have opened with 'Dear Dr. Abisek' and acknowledged the payment concern warmly before confirming details. Every email must be proofread before sending."},
+      {cat:"ss", label:"Soft Skills", text:"Ownership language on quality cases — on the quality grievance case, after the customer shared their invoice and photograph, Preethi should have added a line of full responsibility: 'I would like to reassure you that we take full responsibility for looking into this and will absolutely help you resolve this issue completely.' This language anchors trust."},
+      {cat:"fu", label:"Follow Up", text:"Timely follow-up on pending cases — on the delivery status case, Preethi raised a logistics ticket on 1st June and received an update the same day. The customer followed up on 2nd June with no reply until 3rd June. When an internal update has already been received, reply to the customer immediately — do not wait for them to follow up."}
     ],
     cases:[
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Escalation", score:86, comment:"Good Work!! AOI — follow up on time. Resolution was right, but the follow-up was delayed."},
-      {query:"Grievance", score:100, comment:"Good Work!!"},
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Order Status / Priority", score:100, comment:"Good Work!! AOI — when Priority Request is disabled, should raise an Order Status SR ticket proactively to keep the resolution on track."}
+      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
+      {query:"Refund", score:100, comment:"Good work!!"},
+      {query:"Delivery Related", score:100, comment:"Good Work!! (Internal communication found, order delivered same day of communication)"},
+      {query:"Random / Enquiry", score:100, comment:"Good work!!"},
+      {query:"Grievance / Quality Issues", score:100, comment:"Good Work!! AOI — Add empathetic ownership lines after invoice/photo acknowledgement: 'I would like to reassure you that we take full responsibility...'"},
+      {query:"Payment Issues / CTC Instalment", score:57, comment:"Customer's CTC instalment payment not reflecting. Preethi confirmed payment and suggested logout/login. AOI — Empathy missed and grammatical errors found. Should have started with 'Dear Dr. Abisek'."},
+      {query:"Delivery Related (Delayed Follow-up)", score:86, comment:"Preethi raised a logistics ticket on 1st June. Support replied same day. Customer followed up on 2nd June — no reply until 3rd June. AOI — Ensure timely follow-ups. Reply immediately when internal update is already in hand."}
     ],
-    paramCaseMap:{ss:[], sol:[6], prob:[], tag:[], fu:[1]}
+    paramCaseMap:{ss:[5], sol:[], prob:[], tag:[], fu:[6]}
   },
-  safura: {
-    name:"Safura_B", initials:"SB", color:"#0891b2",
-    cq:92, audits:5, ncf:0, totalErrors:2,
+  ghouse: {
+    name:"Ghouse_M", initials:"GM", color:"#2563eb",
+    cq:62, audits:7, ncf:2, totalErrors:12,
+    params:{ss:7, sol:3, prob:0, tag:0, fu:2},
     aois:[
-      {cat:"ss", label:"Soft Skills", text:"Empathy in difficult situations — across multiple audits, empathy was flagged as missing. When a customer has faced repeated issues (e.g., multiple repairs within a year), acknowledge their frustration before providing information. Statements like 'I completely understand how disappointing this must be' go a long way."},
-      {cat:"ss", label:"Soft Skills", text:"Terminology accuracy — it's xCLusive points, not 'exclusive points'. Details like brand-specific terminology matter and build trust with customers. Always use the correct product and program names."}
+      {cat:"ss", label:"Soft Skills", text:"Empathy when customers state a concern — across multiple audits, empathy was flagged as missing. On the delivery case, after handling the request well, Ghouse should have empathised when the customer mentioned a problem with the post-delivery order. On the discolouration RCA case, the customer was not greeted with acknowledgement before Ghouse launched into information. Empathy must come first, always."},
+      {cat:"ss", label:"Soft Skills", text:"Professional conduct on calls — on the discolouration RCA case, Ghouse was heard speaking to someone in the background in a regional language at the start of the call while the customer was on the line. This reflects poorly on professionalism. The customer is the only priority from the moment the call connects."},
+      {cat:"sol", label:"Solution & Rec.", text:"Resolution ownership and not deflecting to other teams — on the RCA case, Ghouse redirected ownership to the store team rather than coordinating behind the scenes and owning the resolution. CX agents must own the fix internally and communicate to the customer as one unified voice."},
+      {cat:"sol", label:"Solution & Rec.", text:"SLA commitment hygiene — on the RCA case, Ghouse committed to a 'Monday' resolution to the customer. This deadline was missed with no proactive communication. Never commit to a specific deadline unless you can guarantee it. If at risk, notify the customer before the deadline passes — not after they follow up."},
+      {cat:"fu", label:"Follow Up", text:"Follow-up after missed calls — on the RCA case, Ghouse attempted a call on 23rd April which went unanswered. No follow-up SMS, email confirmation, or alternative attempt was made. A missed call is not a closed follow-up. Always attempt at least one more touchpoint — an SMS or a brief email — after any unanswered call."}
     ],
-    params:{ss:2, sol:0, prob:0, tag:0, fu:0},
     cases:[
-      {query:"Repair / Product Quality", score:80, comment:"Customer unhappy about multiple repair issues within a year. Safura responded with relevant information. AOI — could have empathised better and explored alternative resolutions. Good start for someone new to the system."},
-      {query:"General / Ticket Follow-up", score:100, comment:"Good Work!! AOI — when a ticket gets an update within 2 hours, drop a follow-up email proactively. Don't wait for the customer to ask."},
-      {query:"xCLusive Points Enquiry", score:80, comment:"AOI — empathy missing in the response. Also, it is xCLusive points, not 'exclusive points'. Please use the correct brand terminology."},
-      {query:"Escalation", score:100, comment:"Good Work!!"},
-      {query:"Escalation / Empathy", score:100, comment:"Good Work!! AOI — empathy missing. Always acknowledge the customer's situation before moving to resolution."}
+      {query:"Escalation / Delayed Revert", score:57, comment:"Customer mistakenly ordered two products. Several reassignments between agents; finally replied by Ghouse. Ghouse's reply lacked empathy — no revert to customer from 8th to 10th June."},
+      {query:"Return / Money Back (Silver Bracelet)", score:86, comment:"Customer wanted to return a silver bracelet for their baby. Ghouse helped and raised money-back. AOI — Should have tried retention first with 15-day exchange before processing return."},
+      {query:"Delivery / Pre-Event Request", score:86, comment:"Customer requested delivery before a ceremony. Ghouse handled it well with timely follow-up. AOI — Please empathise when customers state a problem with the order post-delivery while giving clarity."},
+      {query:"Repair", score:100, comment:"Good work!!"},
+      {query:"Payment Issues", score:100, comment:"Good work!!"},
+      {query:"Quality Issues / Discolouration (RCA)", score:0, comment:"NCF — RCA case. Customer unhappy with discolouration. Ghouse spoke in regional language during call, gave irrelevant information, committed to Monday resolution but missed it with no update. Offered refund without customer asking. Several critical AOIs around empathy, ownership, SLA hygiene, and professionalism."},
+      {query:"Escalation / Promise Breach (RCA)", score:0, comment:"NCF — RCA case. Responded with polished apology but redirected ownership to store team. Committed to Monday resolution, missed it with no customer update. No follow-up after unanswered call attempt. AOI: Own resolution internally, never commit to dates you can't guarantee, treat 7-month-old unresolved cases with urgency."}
     ],
-    paramCaseMap:{ss:[0,2,4], sol:[], prob:[], tag:[], fu:[]}
+    paramCaseMap:{ss:[0,5,6], sol:[5,6,1], prob:[], tag:[], fu:[5,6]}
+  },
+  jinal: {
+    name:"Jinal_K", initials:"JK", color:"#16a34a",
+    cq:55, audits:7, ncf:3, totalErrors:6,
+    params:{ss:0, sol:4, prob:0, tag:0, fu:2},
+    aois:[
+      {cat:"sol", label:"Solution & Rec.", text:"Cover for absent teammates — on the Preethi follow-up case, the customer had replied on 8th June and Preethi was on Long Leave. The ticket was reassigned to Jinal, who should have replied in Preethi's name and closed the case rather than blindly reassigning. When a teammate is unavailable, own the response."},
+      {cat:"sol", label:"Solution & Rec.", text:"Retention before refund on defective product cases — on the defective product case, Jinal gave the right initial options (good), but then ignored the replacement option and went straight to 15-day exchange. When the customer said 'return', Jinal assumed money-back and initiated a full refund without confirming. Always confirm with the customer whether they want money-back or exchange before acting."},
+      {cat:"fu", label:"Follow Up", text:"Reply when a LinkedIn-escalated customer writes back — on the LTB/LTE NCF case, the customer had already escalated on LinkedIn. The ticket was assigned to Jinal. She failed to reply and blind-reassigned to Ansari despite his shift being over. Jinal should have responded in Ansari's name and closed the ticket. Blind reassignment with no customer reply is an NCF."},
+      {cat:"fu", label:"Follow Up", text:"Proactive verification before denying — on the offers & discounts case, Jinal denied a 5% coupon request without first checking the correct profile or verifying whether another coupon existed. BOD was given this time. Going forward, always confirm the customer's profile details before closing a denial."}
+    ],
+    cases:[
+      {query:"Escalation/Complaint", score:100, comment:"Good Work!!"},
+      {query:"Escalation / Preethi FU (NCF)", score:0, comment:"NCF — Preethi's follow-up case. Customer had replied on 8th June; Preethi was on Long Leave. Ticket was assigned to Jinal, who failed to reply and blind-reassigned to Ansari. Jinal should have responded in Preethi's name rather than reassigning with no customer reply."},
+      {query:"Random / Enquiry", score:100, comment:"Good Work!!"},
+      {query:"Quality Issues / Defective Product (NCF)", score:0, comment:"NCF — Customer escalated defective product. Jinal gave options initially (good), but then ignored replacement and pushed straight to 15-day exchange. When customer said 'return', Jinal assumed money-back and initiated full refund without confirming. Failed to retain via replacement or exchange."},
+      {query:"Offers & Discounts", score:86, comment:"AOI — Should take additional effort to confirm the profile in which the 5% coupon exists before denying. BOD given to not mark as NCF."},
+      {query:"LTB/LTE / LinkedIn Escalation (NCF)", score:0, comment:"NCF — Customer had escalated on LinkedIn. Ticket assigned to Jinal; she failed to reply and blind-reassigned to Ansari despite his shift being over. Jinal should have responded in Ansari's name and closed the case. Blind reassignment with no reply is an NCF."},
+      {query:"Pricing Related", score:100, comment:"Good Work!!"}
+    ],
+    paramCaseMap:{ss:[], sol:[1,3,5], prob:[], tag:[], fu:[1,5]}
   },
   surbhi: {
     name:"Surbhi_A", initials:"SA", color:"#ea580c",
-    cq:63, audits:7, ncf:2, totalErrors:12,
-    params:{ss:5, sol:5, prob:0, tag:0, fu:2},
+    cq:87, audits:7, ncf:0, totalErrors:8,
+    params:{ss:7, sol:1, prob:0, tag:0, fu:0},
     aois:[
-      {cat:"ss", label:"Soft Skills", text:"Language and AI use — avoid phrases like 'completely validate your extreme frustration'. We cannot validate a customer's frustration. Also, multiple audits indicate over-reliance on AI-generated responses — always personalise and proofread before sending."},
-      {cat:"sol", label:"Solution & Rec.", text:"Resolution accuracy and ownership — the Digi Gold/POP NCF was a significant service failure. Surbhi gave misleading resolution without clarifying the actual valuation terms, implicitly validating a demand that could not be met. Always understand the full context before replying on financial or policy-heavy cases."},
-      {cat:"fu", label:"Follow Up", text:"Follow-up commitment — on the Order Status NCF, the customer followed up multiple times between 2nd May and 8th May with no reply. A private note was added but the ticket was closed without any customer reply. Every customer message needs a response. Never close without replying."}
+      {cat:"ss", label:"Soft Skills", text:"Logical and contextual accuracy in replies — on the RTO refund case, Surbhi used a standard template telling the customer to wait 3–5 business days, completely ignoring that the refund was processed two months prior (April 9). She should have directed the customer to check with their bank using the ARN immediately, not asked them to wait. Always read the full case timeline before responding."},
+      {cat:"ss", label:"Soft Skills", text:"Brand language compliance — on the RTO refund case, Surbhi used the word 'funds', which violates CaratLane's brand vocabulary guidelines. Always use the approved brand language. Review the brand language guide and refer to it when drafting emails on financial topics."},
+      {cat:"ss", label:"Soft Skills", text:"Personalisation over templates — on the accolade case, Surbhi forgot to mention the employee's name (Mr. Pramod), addressed the customer as 'Dear Bandaru' (awkward without a title), ignored meaningful personal details (mangalsutra purchase, CTC sign-up), and used generic phrases like 'awesome customers like you'. Accolade emails must be warm, personal, and specific to the customer's story."},
+      {cat:"sol", label:"Solution & Rec.", text:"Email structure — resolution before context is not brand-appropriate. On the repair case, Surbhi opened with 'a refund of the repair charges is not possible' before establishing context. The correct structure is: greeting → empathy → explanation (warranty expired, wear & tear finding) → resolution options → empathetic closure. Clarity first, negative news last."}
     ],
     cases:[
-      {query:"General", score:100, comment:"Good Work!!"},
-      {query:"Repair Delay / Frustration", score:50, comment:"Customer frustrated about repair delay. Surbhi reached out internally for update. AOI — avoid 'completely validate your extreme frustration'. Also failed to build rapport and check for further assistance. Multiple feedbacks suggest over-reliance on AI-generated text."},
-      {query:"Grievance / CS Inbound", score:100, comment:"Good Work!! AOI — should also acknowledge the concern about CS Inbound Calls not getting connected. Overall email quality needs to improve."},
-      {query:"Store Order Cancelled / Refund", score:100, comment:"Customer's store order was cancelled and refund initiated without notice. Surbhi apologised and escalated to RM and Store. Good handling."},
-      {query:"Store Drop / Refund vs Exchange", score:89, comment:"Customer dropped product at store expecting refund, but store raised exchange. Surbhi assisted with exchange first, then refund on re-confirmation. AOI — customer had stated refund from the first email. Should have read the initial request more carefully and been proactive."},
-      {query:"Digi Gold / POP", score:0, comment:"NCF — Significant service failure. Customer disputed ₹12,000 capital loss on Digi Gold. Surbhi gave a vague refund reply without clarifying actual valuation terms, escalating a high-risk legal threat. AOI — on policy-heavy financial cases, understand fully before replying."},
-      {query:"Order Status / Follow-up NCF", score:0, comment:"NCF — Customer followed up multiple times from 2nd May to 8th May. Surbhi added a private note and closed the ticket without replying to the customer. AOI — every customer message requires a response. Never close a ticket without replying."}
+      {query:"Repair / Warranty Dispute", score:71, comment:"Email structure not at brand level — 'refund is not possible' was placed before explanation. AOI — Acknowledge first, then explain warranty status and wear & tear finding, then offer resolution options."},
+      {query:"Refund", score:100, comment:"Good work!!"},
+      {query:"Random / Enquiry", score:100, comment:"Good work!!"},
+      {query:"Refund / RTO Order (Logical Failure)", score:71, comment:"AOI — Told customer to wait 3–5 days even though refund was processed 2 months prior (April 9). Should have directed customer to bank with ARN immediately. Used the word 'funds' (brand language violation). Failed to empathise with the 6-month delivery failure."},
+      {query:"Delivery Related", score:71, comment:"Good work!! AOI — Avoid phrases like 'you do not have to pay anything extra' — sounds pleading rather than owning. Don't ask customers to ignore things. Use right phrases."},
+      {query:"Accolade / Thank You Case", score:71, comment:"AOI — Forgot to mention the employee's name (Mr. Pramod). Addressed customer as 'Dear Bandaru' (awkward without title). Ignored meaningful details (mangalsutra, CTC sign-up). Sounded like a copy-paste template. Personal and warm response was needed."},
+      {query:"Escalation/Complaint", score:100, comment:"Good work!!"}
     ],
-    paramCaseMap:{ss:[1,2,3], sol:[1,4,5,6], prob:[], tag:[], fu:[5,6]}
+    paramCaseMap:{ss:[0,3,4,5], sol:[0], prob:[], tag:[], fu:[]}
   }
 };
 
