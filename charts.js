@@ -12,12 +12,12 @@ function initCharts() {
   new Chart(document.getElementById('scoreChart'), {
     type: 'bar',
     data: {
-      labels: ['Safura_B','Preethi_V','Bhavana_J','Ansari_S','Surbhi_A','Ghouse_M','Jinal_K'],
+      labels: ['Jinal_K','Bhavana_J','Safura_B','Ansari_S','Preethi_V','Ghouse_M','Surbhi_A'],
       datasets: [
         {
           label: 'CQ Score',
-          data: [96, 95, 91, 90, 87, 62, 55],
-          backgroundColor: ['#0891b2','#16a34a','#0d9488','#c8a846','#ea580c','#dc2626','#dc2626'],
+          data: [94, 92, 89, 83, 82, 80, 75],
+          backgroundColor: ['#16a34a','#0d9488','#0891b2','#c8a846','#ea580c','#dc2626','#dc2626'],
           borderRadius: 6,
           barPercentage: 0.58,
           categoryPercentage: 0.8,
@@ -79,13 +79,13 @@ function initCharts() {
   });
 
   // ── 2. Error Distribution Doughnut ──
-  // SS:18, Sol:8, FU:3, Prob:0, Tag:0  total:29
+  // SS:27, Sol:15, Prob:6, FU:7, Tag:2  total:57
   new Chart(document.getElementById('errorChart'), {
     type: 'doughnut',
     data: {
       labels: ['Soft Skills','Solution & Rec.','Follow Up','Probing','Tagging'],
       datasets: [{
-        data: [18, 8, 3, 0, 0],
+        data: [27, 15, 7, 6, 2],
         backgroundColor: ['#ea580c','#dc2626','#16a34a','#2563eb','#7c3aed'],
         borderWidth: 2, borderColor: '#fff', hoverOffset: 8
       }]
@@ -134,11 +134,11 @@ function initCharts() {
   new Chart(document.getElementById('agentErrorChart'), {
     type: 'bar',
     data: {
-      labels: ['Ghouse_M','Surbhi_A','Jinal_K','Ansari_S','Bhavana_J','Preethi_V','Safura_B'],
+      labels: ['Surbhi_A','Ghouse_M','Preethi_V','Safura_B','Bhavana_J','Jinal_K','Ansari_S'],
       datasets: [{
         label: 'Total Errors',
-        data: [12, 8, 6, 5, 4, 4, 3],
-        backgroundColor: ['#dc2626','#ea580c','#ea580c','#2563eb','#0d9488','#7c3aed','#0891b2'],
+        data: [12, 10, 10, 10, 7, 5, 3],
+        backgroundColor: ['#dc2626','#ea580c','#ea580c','#7c3aed','#0d9488','#16a34a','#c8a846'],
         borderRadius: 6,
         barPercentage: 0.58,
         categoryPercentage: 0.8
@@ -187,17 +187,17 @@ function buildHeatmap() {
   const container = document.getElementById('heatmapContainer');
   if (!container) return;
 
-  // Sorted high to low by CQ: Safura, Preethi, Bhavana, Ansari, Surbhi, Ghouse, Jinal
-  const agents = ['Safura_B','Preethi_V','Bhavana_J','Ansari_S','Surbhi_A','Ghouse_M','Jinal_K'];
+  // Sorted high to low by CQ: Jinal, Bhavana, Safura, Ansari, Preethi, Ghouse, Surbhi
+  const agents = ['Jinal_K','Bhavana_J','Safura_B','Ansari_S','Preethi_V','Ghouse_M','Surbhi_A'];
   const params = ['Soft Skills','Solution','Probing','Tagging','Follow Up'];
   const errors = [
-    [3, 0, 0, 0, 0],  // Safura   — total 3
-    [3, 0, 0, 0, 1],  // Preethi  — total 4
-    [4, 0, 0, 0, 0],  // Bhavana  — total 4
-    [3, 1, 0, 0, 1],  // Ansari   — total 5
-    [7, 1, 0, 0, 0],  // Surbhi   — total 8
-    [7, 3, 0, 0, 2],  // Ghouse   — total 12
-    [0, 4, 0, 0, 2]   // Jinal    — total 6
+    [4, 1, 0, 0, 0],  // Jinal    — total 5
+    [5, 1, 0, 0, 1],  // Bhavana  — total 7
+    [3, 2, 3, 0, 2],  // Safura   — total 10
+    [0, 1, 1, 1, 0],  // Ansari   — total 3
+    [4, 3, 0, 0, 3],  // Preethi  — total 10
+    [3, 4, 2, 0, 1],  // Ghouse   — total 10
+    [8, 3, 0, 1, 0]   // Surbhi   — total 12
   ];
 
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
