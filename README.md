@@ -1,6 +1,6 @@
-# CQ Dashboard — Emails Team · July 2026
+# CQ Dashboard — Emails Team · August 2026
 
-Interactive quality-audit dashboard for CaratLane's Emails support team, covering **78 audits** across 7 agents for July 2026.
+Interactive quality-audit dashboard for CaratLane's Emails support team, covering **50 audits** across 5 agents for August 2026.
 
 ## Files
 - `index.html` — main dashboard page (open this in a browser / GitHub Pages)

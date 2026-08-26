@@ -12,12 +12,12 @@ function initCharts() {
   new Chart(document.getElementById('scoreChart'), {
     type: 'bar',
     data: {
-      labels: ['Jinal_K','Bhavana_J','Safura_B','Ansari_S','Preethi_V','Ghouse_M','Surbhi_A'],
+      labels: ['Bhavana_J','Preethi_V','Ghouse_M','Safura_B','Ansari_S'],
       datasets: [
         {
           label: 'CQ Score',
-          data: [94, 92, 89, 83, 82, 80, 75],
-          backgroundColor: ['#16a34a','#0d9488','#0891b2','#c8a846','#ea580c','#dc2626','#dc2626'],
+          data: [95, 94, 91, 81, 78],
+          backgroundColor: ['#16a34a','#0d9488','#0891b2','#ea580c','#dc2626'],
           borderRadius: 6,
           barPercentage: 0.58,
           categoryPercentage: 0.8,
@@ -25,13 +25,13 @@ function initCharts() {
         },
         {
           label: 'Team Target 95%',
-          data: [95,95,95,95,95,95,95],
+          data: [95,95,95,95,95],
           type: 'line', borderColor: '#dc2626', borderWidth: 2,
           borderDash: [6,4], pointRadius: 0, fill: false, order: 1
         },
         {
           label: 'Individual Target 85%',
-          data: [85,85,85,85,85,85,85],
+          data: [85,85,85,85,85],
           type: 'line', borderColor: '#f59e0b', borderWidth: 1.5,
           borderDash: [3,3], pointRadius: 0, fill: false, order: 1
         }
@@ -79,13 +79,13 @@ function initCharts() {
   });
 
   // ── 2. Error Distribution Doughnut ──
-  // SS:27, Sol:15, Prob:6, FU:7, Tag:2  total:57
+  // SS:20, Sol:10, FU:6, Prob:1, Tag:0  total:37
   new Chart(document.getElementById('errorChart'), {
     type: 'doughnut',
     data: {
       labels: ['Soft Skills','Solution & Rec.','Follow Up','Probing','Tagging'],
       datasets: [{
-        data: [27, 15, 7, 6, 2],
+        data: [20, 10, 6, 1, 0],
         backgroundColor: ['#ea580c','#dc2626','#16a34a','#2563eb','#7c3aed'],
         borderWidth: 2, borderColor: '#fff', hoverOffset: 8
       }]
@@ -134,11 +134,11 @@ function initCharts() {
   new Chart(document.getElementById('agentErrorChart'), {
     type: 'bar',
     data: {
-      labels: ['Surbhi_A','Ghouse_M','Preethi_V','Safura_B','Bhavana_J','Jinal_K','Ansari_S'],
+      labels: ['Ansari_S','Safura_B','Ghouse_M','Preethi_V','Bhavana_J'],
       datasets: [{
         label: 'Total Errors',
-        data: [12, 10, 10, 10, 7, 5, 3],
-        backgroundColor: ['#dc2626','#ea580c','#ea580c','#7c3aed','#0d9488','#16a34a','#c8a846'],
+        data: [12, 7, 6, 6, 6],
+        backgroundColor: ['#b8860b','#0891b2','#2563eb','#7c3aed','#0d9488'],
         borderRadius: 6,
         barPercentage: 0.58,
         categoryPercentage: 0.8
@@ -187,17 +187,15 @@ function buildHeatmap() {
   const container = document.getElementById('heatmapContainer');
   if (!container) return;
 
-  // Sorted high to low by CQ: Jinal, Bhavana, Safura, Ansari, Preethi, Ghouse, Surbhi
-  const agents = ['Jinal_K','Bhavana_J','Safura_B','Ansari_S','Preethi_V','Ghouse_M','Surbhi_A'];
+  // Sorted high to low by CQ: Bhavana, Preethi, Ghouse, Safura, Ansari
+  const agents = ['Bhavana_J','Preethi_V','Ghouse_M','Safura_B','Ansari_S'];
   const params = ['Soft Skills','Solution','Probing','Tagging','Follow Up'];
   const errors = [
-    [4, 1, 0, 0, 0],  // Jinal    — total 5
-    [5, 1, 0, 0, 1],  // Bhavana  — total 7
-    [3, 2, 3, 0, 2],  // Safura   — total 10
-    [0, 1, 1, 1, 0],  // Ansari   — total 3
-    [4, 3, 0, 0, 3],  // Preethi  — total 10
-    [3, 4, 2, 0, 1],  // Ghouse   — total 10
-    [8, 3, 0, 1, 0]   // Surbhi   — total 12
+    [5, 1, 0, 0, 0],  // Bhavana  — total 6
+    [3, 3, 0, 0, 0],  // Preethi  — total 6
+    [5, 1, 0, 0, 0],  // Ghouse   — total 6
+    [3, 2, 0, 0, 2],  // Safura   — total 7
+    [4, 3, 1, 0, 4]   // Ansari   — total 12
   ];
 
   const isDark = document.documentElement.getAttribute('data-theme') === 'dark';

@@ -1,172 +1,117 @@
 const AGENTS = {
-  jinal: {
-    name:"Jinal_K", initials:"JK", color:"#16a34a",
-    cq:94, audits:12, ncf:0, totalErrors:5,
-    params:{ss:4, sol:1, prob:0, tag:0, fu:0},
-    aois:[
-      {cat:"ss", label:"Soft Skills", text:"Lead with empathy before information. On the customer service delay call and the refund delay case, Jinal gave the correct factual answer but did not acknowledge the customer's frustration or long wait first. Always acknowledge how the customer feels before moving into details."},
-      {cat:"sol", label:"Solution & Rec.", text:"Offer a real solution, not just a technically correct one. On the broken product case, the customer was already upset about having to drive 30km back to the store. Telling them to make the trip anyway defeats the purpose of acknowledging their trouble. Coordinate a home pickup or replacement delivery with the store instead."}
-    ],
-    cases:[
-      {query:"OGE Policy", score:100, comment:"Good Work!! Overall email can be structured better. Will discuss in the feedback session."},
-      {query:"Escalation/Complaint", score:100, comment:"Good Work!! Need to structure emails better, using clear points."},
-      {query:"Escalation/Complaint", score:100, comment:"Good Work!! Needs better structuring and grammar. BOD given."},
-      {query:"Escalation/Complaint", score:100, comment:"Good Work!!"},
-      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
-      {query:"Escalation/Complaint", score:100, comment:"Good work!! AOI: Call the customer going forward to avoid multiple email interactions."},
-      {query:"Customer Service Delay (IB Call)", score:83, comment:"Failed to acknowledge the customer's concern about the customer service delay on the inbound call. The rest of the email was good."},
-      {query:"Product Quality", score:63, comment:"Jinal missed the mark on problem solving. The customer was upset about receiving a broken product and having to drive 30km back to the store. Instead of coordinating a home pickup or replacement delivery with the store, Jinal told the customer to make the drive anyway. Acknowledging the inconvenience does not help if the customer still has to make the trip."},
-      {query:"Order Status", score:100, comment:"Good work!! AOI: Start using PVT notes to log ticket IDs and internal communication with Logistics or other teams."},
-      {query:"Refund Delay", score:88, comment:"Jinal shared the ARN number quickly but lacked empathy. The customer had been waiting over 45 days for their refund and was understandably worried. Should have acknowledged that before pointing them to their bank."},
-      {query:"Feedback", score:90, comment:"Good work!! AOI: The customer signed off as 'Dr. Pradhan', but Jinal addressed them simply as 'Pradhan'. Using the correct title matters even more when the customer is already unhappy about a lack of respect."},
-      {query:"Gifted Order Exchange", score:100, comment:"Good work!!"}
-    ],
-    paramCaseMap:{ss:[6,7,9,10], sol:[7], prob:[], tag:[], fu:[]}
-  },
   bhavana: {
     name:"Bhavana_J", initials:"BJ", color:"#0d9488",
-    cq:92, audits:12, ncf:0, totalErrors:7,
-    params:{ss:5, sol:1, prob:0, tag:0, fu:1},
+    cq:95, audits:10, ncf:0, totalErrors:6,
+    params:{ss:5, sol:1, prob:0, tag:0, fu:0},
     aois:[
-      {cat:"ss", label:"Soft Skills", text:"Avoid interrupting the customer, and lead with empathy. On the sentimental buyback cancellation case, Bhavana interrupted the customer multiple times and did not close the call properly on Ameyo. On the order status case, both the original and follow up emails lacked structure and empathy, especially since the order had been cancelled. Let the customer finish speaking, and open every reply with empathy before getting into the process."},
-      {cat:"ss", label:"Soft Skills", text:"Give a clear timeframe instead of vague wording. The phrase 'allow us little time' was flagged as unclear. Always give a specific expected timeframe, such as '24 to 48 hours', instead of soft, open ended language."},
-      {cat:"sol", label:"Solution & Rec.", text:"Take ownership instead of relying on what another team said. On the repair versus refund case, the store and internal team had given the customer incorrect information, but Bhavana did not check the internal ticket herself before replying, and passed the case back to the store instead of converting it to a money back refund. Always verify internally before repeating what another team told the customer, and take ownership of the resolution."},
-      {cat:"fu", label:"Follow Up", text:"Keep tickets open until they are truly resolved. A ticket was closed too early instead of being kept pending with a scheduled follow up. Do not close a case until the customer's issue is actually resolved."}
+      {cat:"ss", label:"Soft Skills", text:"Match the tone to the situation, especially escalations. On the LTE case, a structured, numbered escalation was answered without addressing each point systematically, and on a CTC redemption for a customer facing a health emergency, the reply leaned on unedited template language instead of a warmer, personalised tone. When a customer signals urgency or distress, slow down and write specifically for them."},
+      {cat:"ss", label:"Soft Skills", text:"Lead with empathy on refund and payment cases even when the resolution itself is correct. The refund-related case was handled well operationally, but the final email lacked empathy and needed a softer close."},
+      {cat:"sol", label:"Solution & Rec.", text:"Mark BOD instead of letting a good save go unflagged when a case is only saved by template edits. On the CTC-to-Digi Gold conversion for a customer citing a health emergency, the underlying request was fulfilled but the delivery needed a BOD flag for the emergency handling and tone."}
     ],
     cases:[
-      {query:"Order Status", score:86, comment:"Good work. Avoid saying 'allow us little time'. Share an expected timeframe with the customer instead."},
-      {query:"Buyback Cancellation Request", score:71, comment:"Customer wanted to cancel an already refunded buyback and pay back to get the order again, for sentimental reasons. Bhavana tried her best but interrupted the customer multiple times and did not close the call on Ameyo."},
-      {query:"Escalation/Complaint", score:88, comment:"BOD given. The ticket should have stayed pending rather than being closed. Keep a timely follow up without delay."},
-      {query:"Escalation/Complaint", score:100, comment:"Good Work!!"},
-      {query:"Escalation/Complaint", score:100, comment:"Good Work!!"},
-      {query:"Order Status", score:75, comment:"Email lacked structure. Needed to lead with empathy and a clear timeframe, especially since the order was cancelled. The follow up email had the same issue."},
-      {query:"Escalation/Complaint", score:100, comment:"Good work!! AOI: Share the expected delivery date too, since it was scheduled for manual dispatch."},
-      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
-      {query:"General Purchase", score:110, comment:"Good work!!"},
-      {query:"Escalation/Complaint", score:100, comment:"Revised BOD audit. Good work."},
-      {query:"Escalation/Complaint", score:100, comment:"Revised BOD audit. Good work."},
-      {query:"Quality Issue / Repair vs Refund", score:70, comment:"Reaudited, BOD given for NCF. Bhavana did not investigate the issue fully and missed the chance to resolve it right away. The store and internal team had given the customer incorrect information, forcing a repair process instead of a refund. Checking the internal ticket would have shown that a money back refund was possible. She should have taken full ownership and converted the ticket herself, instead of giving a vague answer and passing it back to the store."}
-    ],
-    paramCaseMap:{ss:[0,1,5,11], sol:[11], prob:[], tag:[], fu:[2]}
-  },
-  safura: {
-    name:"Safura_B", initials:"SB", color:"#0891b2",
-    cq:89, audits:12, ncf:0, totalErrors:10,
-    params:{ss:3, sol:2, prob:3, tag:0, fu:2},
-    aois:[
-      {cat:"ss", label:"Soft Skills", text:"Share complete information on refund cases. On the price difference refund case for Order M6FC1011, Safura confirmed a refund was processed but did not proactively share the bank processing timeline or a clear transaction reference. She also did not warmly acknowledge the customer's follow up update. Always give the complete picture upfront."},
-      {cat:"ss", label:"Soft Skills", text:"Improve email structure, grammar, and directness. Structure and grammar issues were flagged on the refund case, and on the product quality case Safura avoided a fair technical question instead of giving a clear, educational answer, while also reusing the same paragraph across replies. Proofread every email, answer the actual question asked, and vary the phrasing used."},
-      {cat:"prob", label:"Probing", text:"Go the extra mile when probing for what the customer really needs. On the store complaint and offers and discounts cases, the base resolution was correct, but the chance to personalise the experience, such as offering a scheduled store visit or a sales callback for a better discount, was missed. Probe for what would genuinely delight the customer, not just what closes the ticket."},
-      {cat:"fu", label:"Follow Up", text:"Reply within the committed timeframe. A day's delay was flagged on the product quality case, and a smaller delay on another audit. Reply within the promised window and update the customer proactively instead of waiting for them to follow up."}
-    ],
-    cases:[
-      {query:"Refund / Price Difference", score:63, comment:"Customer requested a refund of Rs. 4,482 for a price difference on Order M6FC1011. Safura confirmed a refund was processed but did not proactively share the bank timeline of 5 to 7 working days or a clear transaction reference. AOI: Give the full picture upfront, and warmly acknowledge the customer's follow up update instead of just restating information."},
-      {query:"Escalation/Complaint", score:100, comment:"Good Work!!"},
-      {query:"Product Quality", score:100, comment:"Good Work!!"},
-      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
-      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
-      {query:"Escalation/Complaint", score:70, comment:"Email lacked structure and had grammatical errors. AOI: Proofread every email and follow the proper sequence before sending."},
-      {query:"Escalation/Complaint", score:100, comment:"Good work on redirecting the customer to a phone call instead of WhatsApp or Freshchat."},
-      {query:"Offers & Discounts", score:90, comment:"Good work!! AOI: Please forward such emails and arrange a sales callback to pitch the best possible discount. We had a 100% off on making charges that could have been offered as an alternative. BOD given since the agent is new."},
-      {query:"Product Quality", score:70, comment:"Safura failed to properly answer why the gold discoloured only around the diamonds. The tiny gaps around the diamond settings trap moisture, causing that area to oxidise faster. She deflected the question to a store visit instead, took over a day to reply, made a grammar mistake, and reused the same paragraph across replies."},
+      {query:"CTC", score:100, comment:"The customer reached out requesting written confirmation regarding whether a 5-day grace period applied to her CaratLane Treasure Chest monthly installment due on August 13th, and if there would be any financial penalty or impact on her plan. Bhavana responded promptly within ~30 minutes (10:33 AM), accurately confirming the policy details (explaining that a 10-day grace period is provided) while clearly outlining the policy condition regarding proportional discount reduction for delayed payments."},
       {query:"Order Status", score:100, comment:"Good Work!!"},
-      {query:"Customer Service Complaint at Store", score:88, comment:"Good work!! AOI: Could have gone the extra mile by offering to schedule a personalised store visit at a time that works for the customer."},
-      {query:"Escalation/Complaint", score:88, comment:"Revised audit. BOD given considering the agent is new and this was her first mistake. AOI: Reply promptly to avoid delaying the follow up."}
+      {query:"GWD", score:80, comment:"Good work!!"},
+      {query:"COD", score:60, comment:"The customer sent an email sharing feedback regarding their visit to the Mysuru store, expressing disappointment that the store refused home delivery without a 50% advance payment. The customer noted they ended up purchasing from a competitor as a result. Bhavana responded promptly within 22 minutes, offering a clear and empathetic apology, correctly clarifying CaratLane's in-store Cash-on-Delivery (COD) policy (50% upfront payment required), and acknowledging that the communication at the store could have been handled better."},
+      {query:"Payment Failure / Credit Balance", score:110, comment:"Good work!!"},
+      {query:"Refund Related", score:90, comment:"Good work!! Last email could have been better, lacked empathy. Mentioned a better version in pvt notes."},
+      {query:"LTE", score:90, comment:"BOD given. Corrective email mentioned in private notes for reference: while the core resolution was handled correctly, whenever a customer sends a structured or numbered escalation, try to answer each point systematically. Additionally, when a customer expresses high frustration or mentions external escalations like consumer forum or NCH, personalize the response with stronger ownership phrases rather than standard templates."},
+      {query:"LTE/LTB", score:100, comment:"Good Work!!"},
+      {query:"CTC", score:65, comment:"The customer requested an urgent plan redemption into Digi Gold due to a health emergency. Bhavana handled the email and processed the request to convert the Treasure Chest plan to Digi Gold. While the core request was fulfilled, the email heavily relied on unedited template scripts, leading to a robotic tone during an emergency. BOD given for not marking NCF."},
+      {query:"Refund", score:110, comment:"Amazing work Bhavana! Following up with the customer before them reaching out sets the right example, keep this up!!"}
     ],
-    paramCaseMap:{ss:[0,5,8], sol:[0,5], prob:[5,7,10], tag:[], fu:[8,11]}
-  },
-  ansari: {
-    name:"Ansari_S", initials:"AS", color:"#b8860b",
-    cq:83, audits:6, ncf:1, totalErrors:3,
-    params:{ss:0, sol:1, prob:1, tag:1, fu:0},
-    aois:[
-      {cat:"sol", label:"Solution & Rec.", text:"Double check ticket and order details before merging. Ansari merged an incorrect ticket and replied to what looked like the same customer, but on a different order ID, which caused an NCF. Always confirm the order ID and full ticket context, including probing for the right details and tagging the correct reference, before merging any duplicate tickets."}
-    ],
-    cases:[
-      {query:"Escalation/Complaint", score:100, comment:"Good Work!!"},
-      {query:"Ticket Merge Error (NCF)", score:0, comment:"NCF. Ansari merged an incorrect ticket and replied to a different query for the same customer, but with the wrong order ID. Always confirm the order ID matches before merging or replying to a ticket."},
-      {query:"Escalation/Complaint", score:100, comment:"Good Work!!"},
-      {query:"CL POP/TC", score:100, comment:"Good work!!"},
-      {query:"Feedback / Delivery Delay", score:100, comment:"Customer gave negative feedback about customer service and a delivery delay. Ansari replied and the order was delivered in the meantime. Overall the email could be a little better. First BOD given."},
-      {query:"Order Cancellation", score:100, comment:"Good Work!!"}
-    ],
-    paramCaseMap:{ss:[], sol:[1], prob:[1], tag:[1], fu:[]}
+    paramCaseMap:{ss:[5,6,8], sol:[8], prob:[], tag:[], fu:[]}
   },
   preethi: {
     name:"Preethi_V", initials:"PV", color:"#7c3aed",
-    cq:82, audits:12, ncf:1, totalErrors:10,
-    params:{ss:4, sol:3, prob:0, tag:0, fu:3},
+    cq:94, audits:10, ncf:0, totalErrors:6,
+    params:{ss:3, sol:3, prob:0, tag:0, fu:0},
     aois:[
-      {cat:"ss", label:"Soft Skills", text:"Give complete information in the first reply, in the customer's preferred language. On the ring exchange case, the WhatsApp verification step and Lifetime Exchange values should have been explained upfront rather than introduced later, which caused avoidable back and forth. On the digital gold case, replying in English to a customer who wrote in Hindi meant the message never landed. Always match the customer's preferred language, or call first."},
-      {cat:"sol", label:"Solution & Rec.", text:"Take personal ownership of urgent requests. On the profile balance case, Preethi raised a callback rather than calling the customer herself, despite the same day urgency. On the ring exchange case, the actual urgent request about the ring was dropped from the follow up email. When a request is time sensitive, handle it directly rather than routing it elsewhere."},
-      {cat:"fu", label:"Follow Up", text:"Follow through on every committed date. On the delayed order status case, Preethi missed her own Monday follow up commitment after already asking for two extensions, which led to an NCF. Once a date is committed to the customer, that follow up must happen without the customer needing to chase it."}
+      {cat:"ss", label:"Soft Skills", text:"Acknowledge a delay before explaining policy. On the repair status case, the customer had waited over 16 days past a promised 48-hour callback, but Preethi jumped straight to the store instruction without acknowledging the communication lapse. On a second repair status update, a changed dispatch date landed without any empathy for the extra wait. Open with an apology for the delay before moving into the process."},
+      {cat:"sol", label:"Solution & Rec.", text:"Explain the 'why', not just the 'what'. On the repair case, the customer wasn't told why both earrings are needed for a proper repair match. On a diamond policy question, the ₹2 Lakh threshold for the 15-day money-back clause was left out. On the second repair status case, the response needed clearer, more proactive assurance about the extra delay. Always close the information gap completely, not just partially."}
     ],
     cases:[
-      {query:"Profile Balance / Urgent Order", score:80, comment:"Customer could not use their profile balance and wanted to place an order the same day. Preethi raised a callback on OneView. AOI: Should have called the customer herself given the urgency. The sales lead was raised but remained unassigned."},
-      {query:"Order Status / Delayed Follow-up (NCF)", score:0, comment:"NCF. Customer could not locate their order and the store could not help either. Preethi started an investigation, asked for 24 to 48 hours, then Monday, but missed her own committed follow up on Monday. She asked for one more day on Tuesday, and there has been no follow up or call since."},
-      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
-      {query:"Digital Gold SIP Cancellation", score:60, comment:"Customer wrote in Hindi asking to cancel their CL digital gold SIP on PhonePe. Preethi replied in English. The customer did not understand and replied again, and the follow up was still in English. Should have communicated in the customer's preferred language or called before emailing."},
-      {query:"Escalation/Complaint", score:100, comment:"Good work!! Please mention ticket details in PVT notes too."},
-      {query:"Escalation/Complaint", score:89, comment:"Good work. Avoid saying 'a little time'. Give a clear timeframe, such as 24 to 48 hours."},
-      {query:"Product Quality", score:100, comment:"Good work!!"},
-      {query:"Website Issue", score:100, comment:"Good work!!"},
-      {query:"Store Callback", score:100, comment:"Good work!!"},
-      {query:"TAH Appointment", score:88, comment:"Good work!! BOD given."},
-      {query:"Ring Exchange / WhatsApp Verification", score:63, comment:"Preethi caused unnecessary back and forth on an urgent ticket. The WhatsApp verification process and Lifetime Exchange values should have been explained in the very first email. She also broke her promise to resolve it the same day, replying only the next morning, and forgot to re ask about the ring itself in her second email, which was the most time sensitive part of the request."},
-      {query:"Repair", score:110, comment:"Good work!! Customer appreciated it."}
+      {query:"Repair Status", score:65, comment:"The customer reached out regarding order #EZNOIGCM9EB5I-JR, stating he submitted a damaged earring for repair under warranty, received an email on August 1st promising a callback within 48 hours, but was left waiting for over 16 days. Preethi identified that only one earring was submitted and instructed the customer to bring the second piece to the store. While policy-compliant, Preethi missed acknowledging the 16-day communication lapse and failed to educate the customer on why both pieces are required for repair."},
+      {query:"Order Status", score:100, comment:"Good Work!!"},
+      {query:"xCLusive points", score:100, comment:"Good work!!"},
+      {query:"Presale Callback", score:90, comment:"Good work on arranging a sales callback however basic information could be shared via email, suggestive response mentioned in PVT notes."},
+      {query:"CTC", score:100, comment:"Good work!!"},
+      {query:"Repair Status", score:80, comment:"Customer reached out to check the repair status of their order. Preethi initially handled the query on the 10th and informed the customer that the item was ready for dispatch and would reach the store within 3 to 4 days. However, on the 12th, the update was changed to a new dispatch date of August 17th. Preethi failed to show empathy for the initial miscommunication and the additional delay. AOI: the response could have been structured much better with proactive empathy and clear assurances."},
+      {query:"Pricing Related", score:100, comment:"Good Work!!"},
+      {query:"Repair Request", score:100, comment:"Good work!! Better personalisation and structure needed."},
+      {query:"General Query", score:80, comment:"Good work!!"},
+      {query:"Treasure Chest", score:100, comment:"Good work!!"}
     ],
-    paramCaseMap:{ss:[3,5,10], sol:[0,3,10], prob:[], tag:[], fu:[1,9,10]}
+    paramCaseMap:{ss:[0,5], sol:[0,3,5], prob:[], tag:[], fu:[]}
   },
   ghouse: {
     name:"Ghouse_M", initials:"GM", color:"#2563eb",
-    cq:80, audits:12, ncf:2, totalErrors:10,
-    params:{ss:3, sol:4, prob:2, tag:0, fu:1},
+    cq:91, audits:10, ncf:0, totalErrors:6,
+    params:{ss:5, sol:1, prob:0, tag:0, fu:0},
     aois:[
-      {cat:"ss", label:"Soft Skills", text:"Follow through on every commitment made to a customer. On the missed callback case, an urgent Saturday night call request went completely unattempted, and Ghouse then claimed he had tried when he had not. Never say an action was taken when it was not, and always attempt the specific channel the customer asked for."},
-      {cat:"sol", label:"Solution & Rec.", text:"Own the resolution instead of routing it back to the customer or another team. On the gift card case, Ghouse asked the customer to relay the issue to the store rather than coordinating internally himself. On the delivery delay and new sales inquiry cases, direct questions about the root cause of the delay, and about price, size, and material, went unanswered. Take ownership of both the information and the internal coordination."},
-      {cat:"prob", label:"Probing", text:"Gather the full picture before replying. On the gift card case, the store details were not even asked for, which made it impossible to investigate. Ask for the specific information needed to actually resolve the issue before replying."}
+      {cat:"ss", label:"Soft Skills", text:"Empathize before updating. On the repair status case, Ghouse jumped straight to a status update without acknowledging the delay the customer had already flagged. On another complaint, the customer's frustration went unaddressed while Ghouse simply provided information. Open every reply, especially ones responding to a complaint, with a genuine acknowledgment of the wait or the inconvenience."},
+      {cat:"sol", label:"Solution & Rec.", text:"Own the resolution instead of pushing it back onto the customer. On the exchange/quality case, the customer explicitly asked CaratLane to place the replacement order directly, but Ghouse only credited the profile balance and left the quality defect and re-order unaddressed, requiring the customer to place a fresh order herself."}
     ],
     cases:[
-      {query:"Order Status", score:100, comment:"good work!"},
-      {query:"Escalation / Missed Callback (NCF)", score:0, comment:"NCF. Customer urgently asked for a phone call on Saturday night before a big sale ended. Call logs show no attempt was made. Ghouse waited over 24 hours, then falsely claimed he had tried calling, reused the same AI generated text from the day before, broke his promise to update the customer on Friday, and ignored the request to speak to a manager."},
-      {query:"Delivery Delay / Root Cause", score:80, comment:"Ghouse aligned with the store on a revised delivery date but gave an incomplete resolution. He shared the new date of July 20 without explaining the root cause of the 9 day delay, or why the customer was not proactively updated before the original deadline."},
-      {query:"Gift Card Redemption (NCF)", score:0, comment:"NCF. Instead of taking the store details and coordinating internally, Ghouse told the customer to relay the gift card error to store staff himself, making the customer act as the go between. He should have owned the internal communication directly."},
-      {query:"Payment Status", score:100, comment:"Good work!!"},
-      {query:"Escalation/Complaint", score:100, comment:"Good work!!"},
-      {query:"Account Deletion", score:100, comment:"Good work!!"},
-      {query:"Reactivation", score:100, comment:"Good Work!!"},
-      {query:"Order Status", score:100, comment:"Good work!! AOI: Avoid delayed follow ups. BOD given for this audit."},
-      {query:"General Purchase", score:75, comment:"Ghouse handled this new sales inquiry poorly, ignoring the customer's specific questions on price, size availability, and material, and pushed her to take a phone call instead of simply answering. Acting as a gatekeeper for basic information creates friction for a potential new buyer."},
-      {query:"Account Reactivation", score:100, comment:"Reaudited as BOD. AOI: If unsure of the reason, at least acknowledge the customer's question."},
-      {query:"CTC", score:100, comment:"Good work!!"}
+      {query:"Incorrect SKU delivered", score:80, comment:"The customer filed a severe grievance regarding order #EZAMDCHK7A79I-JR, stating she was billed for an 18KT gold chain at the Ahmedabad store, but upon submitting it for repair after it broke in May 2026, the Medinipur store revealed the piece was actually 14KT gold. Ghouse responded by confirming that an exception approval was obtained to replace the item with an 18KT gold chain, while looping in the Midnapore store management. (BOD) because the relevant store team was actively looped in, the core resolution was achieved, but Ghouse missed providing a concrete ETA and used a tone that underplayed a serious 2.5-month purity discrepancy."},
+      {query:"Order Status", score:100, comment:"The customer reached out regarding a severe delivery delay for a ring. Ghouse responded promptly, correctly identifying the root cause (Quality Control rejection) and offering options to either wait with expedited dispatch or cancel for a store credit/refund. Escalated the order to high priority, set a clear revised ETA, and explained the remaining steps. Good work!!"},
+      {query:"Feedback", score:100, comment:"The customer filed a sensitive complaint regarding staff behavior at a store. Ghouse responded by confirming an internal escalation and, when the customer reiterated her frustration, sent a follow-up confirming higher management review, looping in the store team, and offering a complimentary gift to rebuild trust. Good work!!"},
+      {query:"Exchange", score:60, comment:"The customer filed a complaint regarding an order picked up for return/exchange due to a quality issue (broken screw), left with zero updates. Ghouse replied confirming a credit to her profile balance, but failed to address the quality defect raised and missed taking proactive ownership to place the replacement order directly as requested. Suggestive response mentioned in private notes."},
+      {query:"Feedback", score:100, comment:"The customer sent a detailed complaint regarding poor hospitality at a store during her first purchase. Ghouse handled the ticket promptly, validating her frustration, citing brand values, escalating to store management, and following up appropriately when the customer replied. Good Work!!"},
+      {query:"Order Tracking / Status", score:80, comment:"Good work! BOD."},
+      {query:"Repair Status", score:65, comment:"Ghouse failed to express empathy towards the customer completely and just provided an update, instead of first apologizing for the delay in updating the customer on their repair status."},
+      {query:"Product Quality", score:100, comment:"Good work!!"},
+      {query:"Escalation/Complaint", score:70, comment:"As per the customer's complaint email, Ghouse should have empathised better."},
+      {query:"Order Cancellation", score:80, comment:"Good Work!!"}
     ],
-    paramCaseMap:{ss:[1,3], sol:[1,2,3,9], prob:[2,3], tag:[], fu:[1]}
+    paramCaseMap:{ss:[6,8], sol:[3], prob:[], tag:[], fu:[]}
   },
-  surbhi: {
-    name:"Surbhi_A", initials:"SA", color:"#ea580c",
-    cq:75, audits:12, ncf:1, totalErrors:12,
-    params:{ss:8, sol:3, prob:0, tag:1, fu:0},
+  safura: {
+    name:"Safura_B", initials:"SB", color:"#0891b2",
+    cq:81, audits:10, ncf:1, totalErrors:7,
+    params:{ss:3, sol:2, prob:0, tag:0, fu:2},
     aois:[
-      {cat:"ss", label:"Soft Skills", text:"Show empathy even under pressure. Across several audits, including the GWD discrepancy, the diamond fall complaint, the Treasure Chest delay, and the logistics delay, empathy was consistently the gap. Acknowledge the customer's frustration and the specific inconvenience before moving into process or timelines."},
-      {cat:"ss", label:"Soft Skills", text:"Avoid repeating the same templated language. The same boilerplate apology line, 'We completely understand your concern...', appeared across multiple unrelated cases, which made replies feel robotic. Vary the phrasing so each response feels written specifically for that customer."},
-      {cat:"sol", label:"Solution & Rec.", text:"Make sure every question is actually answered. On the diamond fall case, the customer's direct question about repair charges and lifetime maintenance went unanswered. On the legal threat escalation, the doorstep pickup request and store alignment confirmation were left unaddressed. Always circle back and confirm every question raised has been answered."},
-      {cat:"tag", label:"Tagging", text:"Log and dispose every call correctly. The GWD discrepancy call was not disposed on Ameyo, and no call log could be found for the diamond fall NCF either. Every customer interaction needs to be logged and disposed correctly, especially escalations."}
+      {cat:"ss", label:"Soft Skills", text:"Give the complete picture and check the calendar before replying. On the price difference case, Safura explained the technical pricing error but abruptly asked for a large additional balance without a line-item breakdown, and showed no empathy for a 2-month delay. On a return request case, negative phrasing like 'we are unable to raise it' was used instead of a constructive, structured response."},
+      {cat:"sol", label:"Solution & Rec.", text:"Check the actual timeline before repeating a canned response. On the refund status case, Safura told the customer to wait 7 to 10 business days when the refund had already been processed 16 days earlier, well past that window. On the price difference case, the missing calculation breakdown and reframing around asset value were also gaps."},
+      {cat:"fu", label:"Follow Up", text:"Track every reopened ticket to closure. The xClusive review points case was reopened with a promised 24 to 48 hour resolution, but no follow-up email was ever sent, leaving it overdue and resulting in an NCF."}
     ],
     cases:[
-      {query:"Escalation/Complaint", score:100, comment:"Good Work!!"},
-      {query:"GWD / Quality Discrepancy", score:67, comment:"Customer reported a discrepancy with GWD. The call lacked empathy and was not disposed on Ameyo."},
-      {query:"Product Quality / Diamond Fall (NCF)", score:0, comment:"NCF. Customer's ring had a diamond fall out from the cluster and asked why repair charges applied and whether there was any lifetime maintenance. Surbhi gave a generic apology and offered a quality check without answering the actual question. No call was logged on Ameyo, and the email reused the same templated line."},
-      {query:"Escalation/Complaint", score:86, comment:"Good work!! AOI: Thank the customer for attaching reference details. Acknowledging it improves the overall email quality."},
-      {query:"Order Status", score:71, comment:"Customer's order status was delayed due to Mumbai rains. Overall the email could be better. Several grammatical mistakes and structure issues were found."},
-      {query:"CL POP/TC", score:100, comment:"Good work!!"},
-      {query:"Escalation / Legal Threat", score:57, comment:"Surbhi did not address all of the customer's concerns, specifically the allegation of fraudulent date manipulation on the app. She confirmed the 15 day exchange but did not confirm store alignment or address the doorstep pickup request. For a highly escalated customer threatening legal action, empathy was inadequate and ownership was missing."},
-      {query:"Treasure Chest Payment", score:60, comment:"Customer had not received payment confirmation for their Treasure Chest plan for 4 months. AOI: Refrain from repeating the same templated apology line for every customer."},
-      {query:"Order Status", score:100, comment:"Good work!"},
-      {query:"Order Status", score:90, comment:"Good work. Needs to structure the email better."},
-      {query:"Order Modification", score:100, comment:"Good work! AOI: Better affirmations appreciated going forward."},
-      {query:"Delivery / Logistics Delay", score:70, comment:"The 3 to 4 day courier delay was beyond her control, but Surbhi delivered the update without empathy and did not acknowledge that it was not the resolution the customer hoped for. She also broke her promise to explain the root cause of the daily rescheduling and instead repeated the same tracking timeline the customer had already shared."}
+      {query:"Refund Status", score:70, comment:"Always check the date when a refund was processed before sending standard template lines. Since the refund was completed on August 3rd and Safura replied on August 19th, more than 10 business days had already passed. Instead of telling the customer to wait 7-10 business days as per the canned response, she should have informed them the turnaround time had passed, provided the ARN, and asked them to check with their bank."},
+      {query:"Feedback", score:80, comment:"Good work!!"},
+      {query:"Price Difference", score:45, comment:"The customer filed a formal complaint regarding an order confirmed at a lower price, but the store demanded a much higher amount at pickup, citing a 'system error'. Safura acknowledged the technical error but abruptly informed the customer that a large additional balance was required. She failed to provide a line-item calculation breakdown, lacked empathy regarding the 2-month delay, and missed reframing the payment around the higher physical gold asset value and future exchange benefits. Suggestive response added to PVT notes; BOD given for not marking NCF."},
+      {query:"Review Points (NCF)", score:0, comment:"NCF. The customer reached out stating she uploaded a product review with a picture but did not receive her 200 xClusive points reward. Safura incorrectly responded that points for the purchase itself were added, completely missing the review bonus query. After a private note, Safura reopened the ticket promising a resolution in 24-48 hours, but no follow-up email or resolution was ever sent, leaving the ticket severely overdue."},
+      {query:"Product Quality", score:100, comment:"Good Work!! AOI: Since it was a bad experience for a high value purchase, please try to call such customers at least once for personalised assistance."},
+      {query:"Return Request", score:70, comment:"Customer was unable to raise a return request from their end, showing an error. Safura followed the basic canned response without seeking a screenshot of the error for preventive measures. AOI: please refrain from negative statements such as 'we are unable to raise it', need to structure emails better."},
+      {query:"Replacement Request", score:100, comment:"Good work!! Closing email could be better, will discuss during feedback. BOD given."},
+      {query:"Credit Balance", score:100, comment:"Good Work!!"},
+      {query:"GWD", score:80, comment:"Good Work!!"},
+      {query:"Profile Balance", score:100, comment:"Good Work!!"}
     ],
-    paramCaseMap:{ss:[1,2,3,4,6,7,9,11], sol:[2,6,11], prob:[], tag:[1], fu:[]}
+    paramCaseMap:{ss:[2,5], sol:[0,2], prob:[], tag:[], fu:[3]}
+  },
+  ansari: {
+    name:"Ansari_S", initials:"AS", color:"#b8860b",
+    cq:78, audits:10, ncf:2, totalErrors:12,
+    params:{ss:4, sol:3, prob:1, tag:0, fu:4},
+    aois:[
+      {cat:"ss", label:"Soft Skills", text:"Engage with escalated, emotional customers instead of going quiet. On two separate grievances that both became NCFs, Ansari went completely silent after a customer proposed a compromise or after promising to revert - one on a ring exchange dispute, one on a degraded Shaya pearl piece. On a routine order status case, the customer's name was misspelled in both emails sent. Read the emotional tone of a message and proofread every reply before sending, especially on complaints."},
+      {cat:"sol", label:"Solution & Rec.", text:"Own the resolution end to end. On the ring exchange grievance, the customer's Full Value Exchange compromise with a balance-credit request was merged into the thread and never actioned. On the Shaya pearl complaint, a promised 24-hour revert never happened. Whenever a case is merged or escalated, make sure someone still drives it to a close."},
+      {cat:"prob", label:"Probing", text:"Look for ways to retain a customer, not only to close a ticket. On the ring exchange grievance, no attempt was made to explore what would keep the customer engaged with the brand even as she proposed a reasonable compromise."},
+      {cat:"fu", label:"Follow Up", text:"Every merged or reopened ticket needs a scheduled follow-up. Both NCF cases involved a promise (a revert, a compromise reply) that was never followed through on, leaving live grievances to go completely unaddressed for days."}
+    ],
+    cases:[
+      {query:"Order Status", score:80, comment:"Good work!!"},
+      {query:"Order Status", score:80, comment:"Good work!! Empathy could be better."},
+      {query:"Order Status", score:80, comment:"Good work!!"},
+      {query:"Product Quality (NCF)", score:0, comment:"NCF. The customer filed a formal grievance regarding a defective ring purchased Aug 1st and store misconduct. While initially demanding a full refund, her follow-up email showed a clear willingness to compromise through a Full Value Exchange for a cheaper alternative ring, with one core blocker about the balance refund. Ansari merged this email into the thread and completely went silent, missing an easy, low-effort win to de-escalate a high-risk grievance."},
+      {query:"Product Quality (NCF)", score:0, comment:"NCF. The customer sent a formal grievance regarding a Shaya pearl piece that degraded in quality, detailing emotional distress and loss of brand trust. Ansari sent a cold, 2-line acknowledgment promising to revert with a solution the next day. However, no follow-up email or resolution was ever sent, leaving an active grievance completely unaddressed."},
+      {query:"GWD", score:80, comment:"The customer requested a refund for a price difference between what she paid and the final invoice value. Ansari responded, clearly explaining that gold weight variations during manufacturing alter the final invoice price, and confirmed the excess amount was being refunded to her original payment method."},
+      {query:"Order Status", score:75, comment:"Good work on the follow up!! However please proofread your emails before sending - customer's name was incorrect in both emails sent, and the structure of the email needs to be better. Added suggestive response in PVT notes."},
+      {query:"Refund Delay", score:100, comment:"Good work!! Please structure the email better, suggested response added in PVT notes."},
+      {query:"Order Status", score:110, comment:"Good work!!"},
+      {query:"Order Cancellation", score:80, comment:"Good work!!"}
+    ],
+    paramCaseMap:{ss:[3,4,6], sol:[3,4], prob:[3], tag:[], fu:[3,4]}
   }
 };
 
