@@ -1,6 +1,6 @@
-# CQ Dashboard — Emails Team · September 2026
+# CQ Dashboard — Emails Team · October 2026
 
-Interactive quality-audit dashboard for CaratLane's Emails Team, covering **60 audits** across 6 agents for September 2026 (audit cycle 26 Aug – 25 Sep 2026).
+Interactive quality-audit dashboard for CaratLane's Emails Team, covering **40 audits** across 8 agents for October 2026 (audit cycle 26 Sep – 25 Oct 2026).
 
 ## Files
 - `index.html` — main dashboard page

@@ -1,104 +1,67 @@
-const TEAM_META = {"team": "Emails Team", "month": "September 2026", "params": ["ss", "prob", "sol", "fu", "tag"]};
+const TEAM_META = {"team": "Emails Team", "month": "October 2026", "params": ["ss", "prob", "sol", "fu", "tag"]};
 const AGENTS = {
  "jinalk": {
   "name": "Jinal_K",
   "initials": "JK",
   "color": "#0d9488",
-  "cq": 99,
-  "audits": 10,
+  "cq": 100,
+  "audits": 5,
   "ncf": 0,
-  "totalErrors": 1,
+  "totalErrors": 0,
   "params": {
    "ss": 0,
-   "prob": 1,
+   "prob": 0,
    "sol": 0,
    "fu": 0,
    "tag": 0
   },
   "aois": [
    {
-    "cat": "prob",
-    "label": "Probing",
-    "text": "Resolution probing not done flagged in 1 of 10 audits, for example on the Discounts and offers case (22 Sep). Ask the probing questions needed to resolve the concern, not just to identify it."
+    "cat": "win",
+    "label": "Keep It Up",
+    "text": "No errors flagged in 5 audits this month. Keep the same standard of empathy, accuracy and ownership going into the Diwali season."
    }
   ],
   "cases": [
    {
-    "query": "POP/CTC",
+    "query": "Negative Sentiment",
     "score": 100,
     "ncf": false,
-    "date": "02 Sep",
-    "comment": "Please call the customer going fwd when u see a social media escalation coming up. Giving BOD as you were on sabatical last month."
-   },
-   {
-    "query": "LTB",
-    "score": 100,
-    "ncf": false,
-    "date": "02 Sep",
+    "date": "Customer Service",
     "comment": "Good work!!"
    },
    {
-    "query": "Digi Gold",
+    "query": "Negative Sentiment",
     "score": 100,
     "ncf": false,
-    "date": "18 Sep",
+    "date": "Customer Service",
     "comment": "Good work!!"
    },
    {
-    "query": "Profile Update",
+    "query": "Negative Sentiment",
     "score": 100,
     "ncf": false,
-    "date": "18 Sep",
+    "date": "Customer Service",
+    "comment": "Good work!! AOI - Please add RMs and RBMs to such emails if the store misses a callback despite our request and cx is more iRate"
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
     "comment": "Good work!!"
    },
    {
-    "query": "Repair",
+    "query": "Negative Sentiment",
     "score": 100,
     "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work. Customer was unhappy with the product quality. Delayed response found due to the ticket not being in our queue but rather support queue. Store's critical error by sharing support email id to customer."
-   },
-   {
-    "query": "Profile Unblock",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!!"
-   },
-   {
-    "query": "CTC",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!! AOI - Since the customer was a troublesome customer who faced a difficulty, going fwd please make the customer himself confirm in writing via same email the discussion he had about TC at store for better doccumentation. Overall great work!"
-   },
-   {
-    "query": "Digigold",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work!"
-   },
-   {
-    "query": "TAH cancellation",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work!"
-   },
-   {
-    "query": "Discounts and offers",
-    "score": 88,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work! but should have asked the customer to visit the store for a small cake cutting and store celebration since it is possible from store end."
+    "date": "Customer Service",
+    "comment": "Good work!! AOI - if you know its weekends, always inform the customer a TAT of the next working day post weekend to be on a safer side."
    }
   ],
   "paramCaseMap": {
    "ss": [],
-   "prob": [
-    9
-   ],
+   "prob": [],
    "sol": [],
    "fu": [],
    "tag": []
@@ -109,13 +72,151 @@ const AGENTS = {
   "initials": "AS",
   "color": "#7c3aed",
   "cq": 98,
-  "audits": 10,
+  "audits": 5,
   "ncf": 0,
-  "totalErrors": 2,
+  "totalErrors": 1,
+  "params": {
+   "ss": 1,
+   "prob": 0,
+   "sol": 0,
+   "fu": 0,
+   "tag": 0
+  },
+  "aois": [
+   {
+    "cat": "ss",
+    "label": "Soft Skills",
+    "text": "Missed empathy flagged in 1 of 5 audits, for example on the Random Audit case (Customer Service). Acknowledge the customer's situation and apologise for any delay or inconvenience before moving to the process. A sincere, specific apology in the first response changes the tone of the whole interaction."
+   }
+  ],
+  "cases": [
+   {
+    "query": "Random Audit",
+    "score": 88,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work!! Please empathise during second response"
+   },
+   {
+    "query": "Random Audit",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work!!"
+   },
+   {
+    "query": "Random Audit",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work"
+   },
+   {
+    "query": "Random Audit",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work"
+   },
+   {
+    "query": "Random Audit",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work"
+   }
+  ],
+  "paramCaseMap": {
+   "ss": [
+    0
+   ],
+   "prob": [],
+   "sol": [],
+   "fu": [],
+   "tag": []
+  }
+ },
+ "preethiv": {
+  "name": "Preethi_V",
+  "initials": "PV",
+  "color": "#b8860b",
+  "cq": 98,
+  "audits": 5,
+  "ncf": 0,
+  "totalErrors": 1,
+  "params": {
+   "ss": 1,
+   "prob": 0,
+   "sol": 0,
+   "fu": 0,
+   "tag": 0
+  },
+  "aois": [
+   {
+    "cat": "ss",
+    "label": "Soft Skills",
+    "text": "Tone not inviting flagged in 1 of 5 audits, for example on the Negative Sentiment case (Customer Service). Keep the tone warm and open so the customer feels comfortable asking follow-up questions, especially when they are frustrated."
+   }
+  ],
+  "cases": [
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work but a better phrase to this \"You can make the payment at the store at the time of delivery\" would be \"Once the order is repaired and delivered at the store, our team at store will call you to confirm the same. You may visit the store to verify this and have the charges paid at the store during collection.\""
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work"
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work"
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 90,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Suggestive response added in private notes"
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work!"
+   }
+  ],
+  "paramCaseMap": {
+   "ss": [
+    3
+   ],
+   "prob": [],
+   "sol": [],
+   "fu": [],
+   "tag": []
+  }
+ },
+ "safurab": {
+  "name": "Safura_B",
+  "initials": "SB",
+  "color": "#db2777",
+  "cq": 96,
+  "audits": 5,
+  "ncf": 0,
+  "totalErrors": 1,
   "params": {
    "ss": 0,
    "prob": 0,
-   "sol": 1,
+   "sol": 0,
    "fu": 1,
    "tag": 0
   },
@@ -123,92 +224,124 @@ const AGENTS = {
    {
     "cat": "fu",
     "label": "Follow Up",
-    "text": "Delayed follow-up flagged in 1 of 10 audits, for example on the Wrong product recieved case (11 Sep). Follow up within the committed timeline."
-   },
-   {
-    "cat": "sol",
-    "label": "Solution & Rec.",
-    "text": "Lack of ownership on resolution flagged in 1 of 10 audits, for example on the Exchange case (18 Sep). Own the resolution end to end: raise the right request, set a clear timeline and make sure the customer knows exactly what happens next."
+    "text": "Follow-up not done flagged in 1 of 5 audits, for example on the Negative Sentiment case (Customer Service). When you commit to getting back to the customer, set a reminder and close the loop."
    }
   ],
   "cases": [
    {
-    "query": "Shaya Product Quality",
+    "query": "Negative Sentiment",
     "score": 100,
     "ncf": false,
-    "date": "11 Sep",
-    "comment": "Good work but try framing it better. Will share in feedback"
+    "date": "Customer Service",
+    "comment": "Good work!"
    },
    {
-    "query": "Wrong product recieved",
-    "score": 90,
-    "ncf": false,
-    "date": "11 Sep",
-    "comment": "Good work sticking to the policies. However please try to revert to customers faster."
-   },
-   {
-    "query": "Exceptional Exchange",
+    "query": "Negative Sentiment",
     "score": 100,
     "ncf": false,
-    "date": "18 Sep",
-    "comment": "Great work overall. To further elevate the customer experience, consider incorporating targeted notes of appreciation for military personnel and medical professionals. This small addition makes these key customer segments feel recognized and strengthens brand loyalty."
+    "date": "Customer Service",
+    "comment": "Good work!"
    },
    {
-    "query": "Feedback",
+    "query": "Negative Sentiment",
     "score": 100,
     "ncf": false,
-    "date": "18 Sep",
+    "date": "Customer Service",
+    "comment": "Good work!"
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 80,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work!! But failed to reply to the customer when they asked to reconfirm a few details"
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
     "comment": "Good work!!"
-   },
-   {
-    "query": "Exchange",
-    "score": 88,
-    "ncf": false,
-    "date": "18 Sep",
-    "comment": "Good email but during the second email, should have raised the exception once to try or should have asked the RM to connect with the customer by informing the customer that will arrange a callback from RM"
-   },
-   {
-    "query": "Profile Update",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work"
-   },
-   {
-    "query": "Fraud Alert",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!!"
-   },
-   {
-    "query": "Product quality",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work"
-   },
-   {
-    "query": "Chargeback",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work"
-   },
-   {
-    "query": "Repair Request",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work"
    }
   ],
   "paramCaseMap": {
    "ss": [],
    "prob": [],
-   "sol": [
-    4
+   "sol": [],
+   "fu": [
+    3
    ],
+   "tag": []
+  }
+ },
+ "tishaj": {
+  "name": "Tisha_J",
+  "initials": "TJ",
+  "color": "#16a34a",
+  "cq": 95,
+  "audits": 5,
+  "ncf": 0,
+  "totalErrors": 1,
+  "params": {
+   "ss": 0,
+   "prob": 0,
+   "sol": 0,
+   "fu": 1,
+   "tag": 0
+  },
+  "aois": [
+   {
+    "cat": "fu",
+    "label": "Follow Up",
+    "text": "Missed committed email/WhatsApp/SMS flagged in 1 of 5 audits, for example on the Negative Sentiment case (Customer Service). If you commit to sending an email, WhatsApp or SMS, send it within the timeline you gave."
+   },
+   {
+    "cat": "fu",
+    "label": "Follow Up",
+    "text": "Follow-up not done flagged in 1 of 5 audits, for example on the Negative Sentiment case (Customer Service). When you commit to getting back to the customer, set a reminder and close the loop."
+   }
+  ],
+  "cases": [
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work, refrain from using \"having you again\", better phrases to be used. Please change your canned response."
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 75,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work! but if we commit that we will share the details by monday and it is doccumented in an email format, ensure we follow up."
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work!"
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work!"
+   },
+   {
+    "query": "Negative Sentiment",
+    "score": 100,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work!"
+   }
+  ],
+  "paramCaseMap": {
+   "ss": [],
+   "prob": [],
+   "sol": [],
    "fu": [
     1
    ],
@@ -219,117 +352,8 @@ const AGENTS = {
   "name": "Bhavana_J",
   "initials": "BJ",
   "color": "#2563eb",
-  "cq": 97,
-  "audits": 10,
-  "ncf": 0,
-  "totalErrors": 1,
-  "params": {
-   "ss": 0,
-   "prob": 0,
-   "sol": 1,
-   "fu": 0,
-   "tag": 0
-  },
-  "aois": [
-   {
-    "cat": "sol",
-    "label": "Solution & Rec.",
-    "text": "Incorrect information flagged in 1 of 10 audits, for example on the Profile Update case (20 Sep). Verify before you commit. Check the SOP, the order status and any open ticket before sharing a TAT, policy or outcome."
-   },
-   {
-    "cat": "sol",
-    "label": "Solution & Rec.",
-    "text": "Not aware of latest update flagged in 1 of 10 audits, for example on the Profile Update case (20 Sep). Stay current on process updates so the information you share is accurate."
-   }
-  ],
-  "cases": [
-   {
-    "query": "Repair Status",
-    "score": 100,
-    "ncf": false,
-    "date": "02 Sep",
-    "comment": "Customer was looking for repair status, please specify store name too going fwd."
-   },
-   {
-    "query": "CTC",
-    "score": 100,
-    "ncf": false,
-    "date": "02 Sep",
-    "comment": "Cx was unhappy with the POP policy refund, bhavana helped with digi gold conversion"
-   },
-   {
-    "query": "9KT",
-    "score": 100,
-    "ncf": false,
-    "date": "16 Sep",
-    "comment": "Good work!!"
-   },
-   {
-    "query": "Profile Update",
-    "score": 69,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Customer had already updated his name on the CL app but the invoices weren't updated. Bhavana asked for an ID proof (which was not required in this senario), the correct process would be to ask the customer for screenshot of their app where there is the right name visible as well as the place of correction, then a ticket ID to be created post which the support team will instruct on any further details req. (Since this case is one of a kind, giving a markdown instead of NCF as BOD) Good work on resolving it for the customer in the end.!"
-   },
-   {
-    "query": "Fraud Alert",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Fraud alert, correct process followed."
-   },
-   {
-    "query": "Franchise enquiry",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!!"
-   },
-   {
-    "query": "Discounts and offers",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!!"
-   },
-   {
-    "query": "Repair Status",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work!"
-   },
-   {
-    "query": "Digigold",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work!"
-   },
-   {
-    "query": "Order confirmation",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work!"
-   }
-  ],
-  "paramCaseMap": {
-   "ss": [],
-   "prob": [],
-   "sol": [
-    3
-   ],
-   "fu": [],
-   "tag": []
-  }
- },
- "ghousem": {
-  "name": "Ghouse_M",
-  "initials": "GM",
-  "color": "#0891b2",
-  "cq": 94,
-  "audits": 10,
+  "cq": 86,
+  "audits": 5,
   "ncf": 0,
   "totalErrors": 4,
   "params": {
@@ -343,343 +367,246 @@ const AGENTS = {
    {
     "cat": "ss",
     "label": "Soft Skills",
-    "text": "Missed empathy flagged in 1 of 10 audits, for example on the Shaya Product Quality case (24 Sep). Acknowledge the customer's situation and apologise for any delay or inconvenience before moving to the process. A sincere, specific apology in the first response changes the tone of the whole interaction."
+    "text": "Missed empathy flagged in 1 of 5 audits, for example on the Random Audit case (Customer Service). Acknowledge the customer's situation and apologise for any delay or inconvenience before moving to the process. A sincere, specific apology in the first response changes the tone of the whole interaction."
    },
    {
-    "cat": "sol",
-    "label": "Solution & Rec.",
-    "text": "Missed retention flagged in 1 of 10 audits, for example on the Order Cancellation case (20 Sep). Make a genuine retention attempt before processing cancellations or returns: pitch alternatives, exchanges or offers first."
+    "cat": "ss",
+    "label": "Soft Skills",
+    "text": "Missing positive/ownership phrases flagged in 1 of 5 audits, for example on the Random Audit case (Customer Service). Use ownership phrases such as \"I will personally check this for you\" or \"Let me make sure this gets resolved\" instead of neutral or negative wording."
    },
    {
-    "cat": "sol",
-    "label": "Solution & Rec.",
-    "text": "Incomplete information flagged in 1 of 10 audits, for example on the Order Cancellation case (20 Sep). Close the information gap completely: share the full process, TAT and next steps, and address every point the customer raised."
+    "cat": "prob",
+    "label": "Probing",
+    "text": "Previous interaction not checked flagged in 1 of 5 audits, for example on the Random Audit case (Customer Service). Check previous interactions and open tickets before you commit to anything, so your answer builds on what the customer has already been told."
    }
   ],
   "cases": [
    {
-    "query": "Repair charges",
+    "query": "Random Audit",
     "score": 100,
     "ncf": false,
-    "date": "11 Sep",
-    "comment": "Good work!!"
+    "date": "Customer Service",
+    "comment": "Good work"
    },
    {
-    "query": "OGE",
-    "score": 100,
-    "ncf": false,
-    "date": "11 Sep",
-    "comment": "Good work!! please be a little calmer towards iRate customers. BOD given since the cx was a difficult cx."
-   },
-   {
-    "query": "Profile updates",
-    "score": 100,
-    "ncf": false,
-    "date": "11 Sep",
-    "comment": "Good work!! Cx appriciated as well."
-   },
-   {
-    "query": "Feedback",
-    "score": 100,
-    "ncf": false,
-    "date": "18 Sep",
-    "comment": "Good work!!"
-   },
-   {
-    "query": "Profile Update",
-    "score": 100,
-    "ncf": false,
-    "date": "18 Sep",
-    "comment": "Good work!! Please check treasure chest too."
-   },
-   {
-    "query": "Order Cancellation",
+    "query": "Random Audit",
     "score": 80,
     "ncf": false,
-    "date": "20 Sep",
-    "comment": "Should try for retention before raising an RTO. Could pitch alt design, also should inform the customer about the reason for delay. Although the customer was happy in the end but this could have been handled better."
+    "date": "Customer Service",
+    "comment": "The customer received lighter jewellery, didn't get their full money back, and complained that support was hanging up on them.\n\nThe agent gave wrong math in her first email, promising points that the customer wasn't actually eligible for. When the customer said the points weren't showing in the app, the agent took almost 3 days to reply, only to change her story and say the points were canceled due to late payments.\n\nShe gave wrong information without checking the customer's history, took too long to reply, and didn't solve the problem on the first try."
    },
    {
-    "query": "Product quality",
-    "score": 90,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work make sure to address all customer queries"
-   },
-   {
-    "query": "Repair Request",
+    "query": "Random Audit",
     "score": 100,
     "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work"
+    "date": "Customer Service",
+    "comment": "Good work!"
    },
    {
-    "query": "Repair charges",
+    "query": "Random Audit",
+    "score": 50,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Customer had stated that they were unable to find the diamond prices and the details in the bill only the gold was seen, JC shared the e-certificate with the customer and infomred about gold prices. Failed to understand the customer query itself and assist the customer better/."
+   },
+   {
+    "query": "Random Audit",
     "score": 100,
     "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work"
-   },
-   {
-    "query": "Shaya Product Quality",
-    "score": 69,
-    "ncf": false,
-    "date": "24 Sep",
-    "comment": "Revised audit."
+    "date": "Customer Service",
+    "comment": "Good work!!\\"
    }
   ],
   "paramCaseMap": {
    "ss": [
-    6,
-    9
+    1,
+    3
    ],
    "prob": [
-    5
+    1
    ],
    "sol": [
-    5
+    3
    ],
    "fu": [],
    "tag": []
   }
  },
- "preethiv": {
-  "name": "Preethi_V",
-  "initials": "PV",
-  "color": "#b8860b",
-  "cq": 90,
-  "audits": 10,
-  "ncf": 1,
-  "totalErrors": 2,
+ "krutip": {
+  "name": "Kruti_P",
+  "initials": "KP",
+  "color": "#ea580c",
+  "cq": 85,
+  "audits": 5,
+  "ncf": 0,
+  "totalErrors": 5,
   "params": {
-   "ss": 1,
-   "prob": 0,
+   "ss": 3,
+   "prob": 1,
    "sol": 1,
    "fu": 0,
    "tag": 0
   },
   "aois": [
    {
-    "cat": "sol",
-    "label": "Solution & Rec. · NCF",
-    "text": "1 NCF this month on Profile Merge. Read exactly what the customer asked before replying, and double-check details like email IDs, refund source and points before sending. If the ask is unclear, call the customer to understand it."
+    "cat": "ss",
+    "label": "Soft Skills",
+    "text": "Tone not inviting flagged in 2 of 5 audits, for example on the Negative Sentiment case (Customer Service). Keep the tone warm and open so the customer feels comfortable asking follow-up questions, especially when they are frustrated."
    },
    {
     "cat": "ss",
     "label": "Soft Skills",
-    "text": "Missed empathy flagged in 1 of 10 audits, for example on the Profile Merge case (09 Sep). Acknowledge the customer's situation and apologise for any delay or inconvenience before moving to the process. A sincere, specific apology in the first response changes the tone of the whole interaction."
+    "text": "Grammar / addressing errors flagged in 1 of 5 audits, for example on the Negative Sentiment case (Customer Service). Re-read before you send. Check the customer's name, spelling and sentence structure, because one small slip makes the whole reply look careless."
    },
    {
-    "cat": "sol",
-    "label": "Solution & Rec.",
-    "text": "Lack of ownership on resolution flagged in 1 of 10 audits, for example on the Profile Merge case (09 Sep). Own the resolution end to end: raise the right request, set a clear timeline and make sure the customer knows exactly what happens next."
+    "cat": "prob",
+    "label": "Probing",
+    "text": "Irrelevant or insufficient probing flagged in 1 of 5 audits, for example on the Negative Sentiment case (Customer Service). Probe with purpose: ask the questions that confirm the order, the exact concern and what the customer expects before giving a resolution."
    }
   ],
   "cases": [
    {
-    "query": "Delivery Status",
-    "score": 100,
+    "query": "Negative Sentiment",
+    "score": 50,
     "ncf": false,
-    "date": "02 Sep",
-    "comment": "Good work, please follow up once we get an update."
+    "date": "Customer Service",
+    "comment": "The customer reached out seeking assistance on how to redeem the plan. We should have shared the basic steps to redeem if we are unable to find the cx profile at the same time instead of asking order number, we should ask for Plan ID or a registered contact details like email/number."
    },
    {
-    "query": "Profile Merge",
-    "score": 0,
-    "ncf": true,
-    "date": "09 Sep",
-    "comment": "Customer reached out to merge two accounts as one had a typo in the email address. Preethi correctly notified the customer of the system constraints. However, she failed to provide a resolution and mistakenly copy-pasted the same email address for both profiles on Sep 7. When the customer pointed out the error, Preethi asked for a third email address—completely missing that the mistake was her own and that the customer had already provided both the correct and incorrect email IDs."
+    "query": "Negative Sentiment",
+    "score": 88,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work but when the customer is cancelling a return like LTB or 15DMB and proceeds to keep the order, please appricate the customer as they're being a part of CL family"
    },
    {
-    "query": "Delivery Status",
+    "query": "Negative Sentiment",
+    "score": 88,
+    "ncf": false,
+    "date": "Customer Service",
+    "comment": "Good work!! But can use better words to structure the email dated Fri, 2 Oct 2026 at 5:24 PM"
+   },
+   {
+    "query": "Negative Sentiment",
     "score": 100,
     "ncf": false,
-    "date": "18 Sep",
+    "date": "Customer Service",
     "comment": "Good work!!"
    },
    {
-    "query": "Refund Status",
+    "query": "Negative Sentiment",
     "score": 100,
     "ncf": false,
-    "date": "18 Sep",
+    "date": "Customer Service",
     "comment": "Good work!!"
-   },
-   {
-    "query": "Customer Service feedback",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!! AOI - Arrange a callback from the RM directly for damage control. Although this was highlighted to them but notify the customer that they will reach out for a personal touch and damage control."
-   },
-   {
-    "query": "Exchange",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!!"
-   },
-   {
-    "query": "Customer service feedback for store",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!!"
-   },
-   {
-    "query": "Order status",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work"
-   },
-   {
-    "query": "Order status",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work"
-   },
-   {
-    "query": "Order status",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work"
    }
   ],
   "paramCaseMap": {
    "ss": [
-    1
+    0,
+    1,
+    2
    ],
-   "prob": [],
+   "prob": [
+    0
+   ],
    "sol": [
-    1
+    0
    ],
    "fu": [],
    "tag": []
   }
  },
- "safurab": {
-  "name": "Safura_B",
-  "initials": "SB",
-  "color": "#db2777",
-  "cq": 76,
-  "audits": 10,
-  "ncf": 2,
-  "totalErrors": 7,
+ "ghousem": {
+  "name": "Ghouse_M",
+  "initials": "GM",
+  "color": "#0891b2",
+  "cq": 68,
+  "audits": 5,
+  "ncf": 1,
+  "totalErrors": 10,
   "params": {
-   "ss": 3,
-   "prob": 1,
+   "ss": 2,
+   "prob": 4,
    "sol": 2,
    "fu": 1,
-   "tag": 0
+   "tag": 1
   },
   "aois": [
    {
-    "cat": "sol",
-    "label": "Solution & Rec. · NCF",
-    "text": "2 NCFs this month on Order cancellation, xCLusive points. Read exactly what the customer asked before replying, and double-check details like email IDs, refund source and points before sending. If the ask is unclear, call the customer to understand it."
+    "cat": "ss",
+    "label": "Soft Skills · NCF",
+    "text": "1 NCF this month (Random Audit). Read the full email, list every question the customer asked and answer each one in the same reply. Check the customer's name and details before sending, and if a call does not connect, follow up once in writing rather than calling repeatedly."
    },
    {
-    "cat": "sol",
-    "label": "Solution & Rec.",
-    "text": "Lack of ownership on resolution flagged in 2 of 10 audits, for example on the Order cancellation case (20 Sep). Own the resolution end to end: raise the right request, set a clear timeline and make sure the customer knows exactly what happens next."
+    "cat": "prob",
+    "label": "Probing",
+    "text": "Resolution probing not done flagged in 3 of 5 audits, for example on the Random Audit case (Customer Service). Ask the probing questions needed to resolve the concern, not just to identify it."
    },
    {
-    "cat": "sol",
-    "label": "Solution & Rec.",
-    "text": "Incorrect information flagged in 2 of 10 audits, for example on the Order cancellation case (20 Sep). Verify before you commit. Check the SOP, the order status and any open ticket before sharing a TAT, policy or outcome."
+    "cat": "prob",
+    "label": "Probing",
+    "text": "Irrelevant or insufficient probing flagged in 2 of 5 audits, for example on the Random Audit case (Customer Service). Probe with purpose: ask the questions that confirm the order, the exact concern and what the customer expects before giving a resolution."
    }
   ],
   "cases": [
    {
-    "query": "Product Quality",
+    "query": "Random Audit",
     "score": 100,
     "ncf": false,
-    "date": "16 Sep",
+    "date": "Customer Service",
     "comment": "Good work!!"
    },
    {
-    "query": "CTC",
-    "score": 100,
+    "query": "Random Audit",
+    "score": 69,
     "ncf": false,
-    "date": "16 Sep",
-    "comment": "Good work!!"
+    "date": "Customer Service",
+    "comment": "Ghouse should have structured the email better, the current reply looks like it was just replied to close it. Suggestive reply would be \" Dear Vedhisha, Thank you for reaching out to us. I understand that you're looking for specific details on the stud earrings. I must say, that's an excellent choide there. I would request you to confirm if your contact number -x is the correct contact so our jewllery experts can reach out to you and assist you with these details better and further help you with the purchase? Do let us know if there's anything else we may assist you with? \""
    },
    {
-    "query": "Resizing",
-    "score": 100,
+    "query": "Random Audit",
+    "score": 90,
     "ncf": false,
-    "date": "16 Sep",
-    "comment": "Good work!!"
+    "date": "Customer Service",
+    "comment": "Good work. Could have pitched profile balance for easier transcation for customer rather than 7-10 refund timelines."
    },
    {
-    "query": "xCLusive Points",
-    "score": 100,
+    "query": "Random Audit",
+    "score": 80,
     "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!!"
+    "date": "Customer Service",
+    "comment": "Please provide complete information in the first email itself. Also Customer's can indeed view their profile balance at the payment page, there isn't any seperate section. Need to proof read your responses and frame it better."
    },
    {
-    "query": "Order cancellation",
+    "query": "Random Audit",
     "score": 0,
     "ncf": true,
-    "date": "20 Sep",
-    "comment": "Safura B acknowledged the courier inconvenience, apologized, and clarified that the order was marked as Undelivered/RTO. However, she informed the customer that upon arrival at the facility, the ₹11,127 refund would be credited to her CaratLane profile balance instead of her original payment source (bank account) which the customer requested via email, and failed to confirm the cancellation of the false courier pickup request."
-   },
-   {
-    "query": "CTC Cancellation",
-    "score": 100,
-    "ncf": false,
-    "date": "20 Sep",
-    "comment": "Good work!!"
-   },
-   {
-    "query": "Exchange",
-    "score": 100,
-    "ncf": false,
-    "date": "21 Sep",
-    "comment": "Good work"
-   },
-   {
-    "query": "-ve sentiments",
-    "score": 62,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Avoid templated replies and provide detailed replies to such customers who face an inconvinence for more than 6 months. Also if we commit a follow up within 24-48 hours make sure to drop a follow up too."
-   },
-   {
-    "query": "xCLusive points",
-    "score": 0,
-    "ncf": true,
-    "date": "22 Sep",
-    "comment": "Customer reached out stating \"I am waiting for my remaining points\" Safura replied about validity of xCLusive points. Incorrect reply, no call on ameyo found to understand why this was replied this way."
-   },
-   {
-    "query": "-ve sentiments",
-    "score": 100,
-    "ncf": false,
-    "date": "22 Sep",
-    "comment": "Good work"
+    "date": "Customer Service",
+    "comment": "The customer complained that they were charged more than the invoice amount for their order. JC offered a refund or store credit option, but when the customer explicitly asked who approved the difference at the store, JC completely ignored the question, addressed the customer by the wrong name (\"Kavita\"), and gave an irrelevant explanation on how to redeem store credit via OTP. JC failed to explain CaratLane's standard policy regarding orders made on estimated weight versus actual finished weight. Furthermore, when the customer provided their phone number to get an answer, JC called the customer 4 times back-to-back despite the calls being continuously disconnected. JC then sent another email that still failed to answer who approved the store action and instead asked the customer to explain what happened."
    }
   ],
   "paramCaseMap": {
    "ss": [
-    4,
-    7,
-    8
+    1,
+    4
    ],
    "prob": [
-    8
+    1,
+    2,
+    3,
+    4
    ],
    "sol": [
-    4,
-    8
+    3,
+    4
    ],
    "fu": [
-    7
+    4
    ],
-   "tag": []
+   "tag": [
+    4
+   ]
   }
  }
 };
